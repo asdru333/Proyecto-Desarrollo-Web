@@ -8,8 +8,7 @@ import Header from "../../Components/Header";
 
 export default function App() {
   return (
-    /*
-    <Header>
+    //<Header>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -19,8 +18,6 @@ export default function App() {
           <Route path="/Acompanamientos" element={<Acompanamientos />} />
         </Routes>
       </BrowserRouter>
-    </Header>
-    */
-    <Acompanamientos />
+    //</Header>
   );
 }
