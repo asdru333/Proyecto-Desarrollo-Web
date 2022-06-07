@@ -1,8 +1,8 @@
 import React from 'react';
 
-function AddCartBtn() {
+function GridItemBtn(props) {
     return <div>
-        <button class="h-10 w-40 bg-red hover:bg-light-red text-white font-bold py-2">Agregar al carrito</button>
+        <button class="h-10 w-40 bg-red hover:bg-light-red text-white font-bold py-2">{props.text}</button>
     </div>
 }
 
@@ -18,4 +18,4 @@ function FormBtn(props) {
     </div>
 }
 
-export { AddCartBtn, SideMenuBtn, FormBtn }
+export { GridItemBtn, SideMenuBtn, FormBtn }
