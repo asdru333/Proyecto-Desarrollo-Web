@@ -3,7 +3,7 @@ import MenuItem  from '../MenuItem';
 
 function ProductGrid() {
     return <div>
-        <div class = "mx-10 grid grid-cols-4 gap-6">
+        <div className="mx-10 grid grid-cols-4 gap-6">
             <MenuItem />
             <MenuItem />
             <MenuItem />
