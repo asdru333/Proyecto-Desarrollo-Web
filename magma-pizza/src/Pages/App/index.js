@@ -7,11 +7,12 @@ import Acompanamientos from "../Acompanamientos";
 import Header from "../../Components/Header";
 import CrearCuenta from "../CrearCuenta";
 import Carrito from "../Carrito";
+import OrdenRecibida from "../OrdenRecibida";
 
 export default function App() {
   return (
-    //<Header>
-      <BrowserRouter>
+    <BrowserRouter>
+      <Header/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Contactenos" element={<Contactenos />} />
@@ -20,8 +21,8 @@ export default function App() {
           <Route path="/Acompanamientos" element={<Acompanamientos />} />
           <Route path="/CrearCuenta" element={<CrearCuenta />} />
           <Route path="/Carrito" element={<Carrito />} />
+          <Route path="/OrdenRecibida" element={<OrdenRecibida />} />
         </Routes>
-      </BrowserRouter>
-    //</Header>
+    </BrowserRouter>
   );
 }
