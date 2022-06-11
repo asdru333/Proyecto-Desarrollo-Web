@@ -3,7 +3,7 @@ import { SideMenuBtn } from '../Buttons';
 
 function SideMenu() {
   return <div>
-      <div class="flex flex-col gap-y-6 w-1/3">
+      <div class="flex flex-col gap-y-4 ml-20 w-1/3">
         <SideMenuBtn text = 'Pizzas'/>
         <SideMenuBtn text = 'Bebidas'/>
         <SideMenuBtn text = 'Postres'/>
