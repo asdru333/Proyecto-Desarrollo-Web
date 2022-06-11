@@ -2,13 +2,13 @@ import React from 'react';
 
 function FormInput(props) {
     return <div>
-       <label class = "text-lg text-white">
+       <label className = "text-lg text-white">
           {props.label} 
           <input
             name={props.name}
             type={props.type}
             placeholder={props.placeholder}
-            class="mb-6 mt-1 block px-3 py-2 w-64
+            className="mb-6 mt-1 block px-3 py-2 w-64
             bg-white border border-slate-300 rounded-md text-lg shadow-lg text-black placeholder-slate-400
               focus:outline-none focus:border-yellow focus:ring-1 focus:ring-yellow
               disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none

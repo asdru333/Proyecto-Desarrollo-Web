@@ -4,7 +4,7 @@ import Home from "../Home";
 import Login from "../Login";
 import SobreNosotros from "../SobreNosotros";
 import Acompanamientos from "../Acompanamientos";
-import Header from "../../Components/Header";
+import Navbar from "../../Components/NavBar";
 import CrearCuenta from "../CrearCuenta";
 import Carrito from "../Carrito";
 import OrdenRecibida from "../OrdenRecibida";
@@ -12,7 +12,7 @@ import OrdenRecibida from "../OrdenRecibida";
 export default function App() {
   return (
     <BrowserRouter>
-      <Header/>
+      <Navbar/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Contactenos" element={<Contactenos />} />
