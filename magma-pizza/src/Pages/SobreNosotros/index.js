@@ -1,26 +1,72 @@
-import Header from "../../Components/Header"
+import img1 from "../../Resources/Images/pizza_giratoria.png"
+import img2 from "../../Resources/Images/chef_group_smiling.png"
+import img3 from "../../Resources/Images/chef_taking_notes.png"
 
 export default function SobreNosotros() {
   return (
     <>
-      <div className="text-justify mx-24">
-      <h2 className="text-pizza mt-8 text-3xl">&iquest;Quienes somos?</h2>
-      <p className="text-xl">Magma Pizza es una franquicia nacional con 100% talento costarricense. Nuesto objetivo es unir a amigos y familias con nuestras deliciosas pizzas. Ese es nuestro secreto: un lugar donde puedas pasar tus momentos espaciales junto con nuestras pizzas llenas de pasi&oacute;n.<br />
-      Con tan solo unos pocos a&ntilde;os en el mercado, hemos logrados ser parte de la historia de muchas familias costarricenses, acompa&ntilde;andolos d&iacute;a a d&iacute;a, ya sea en el desayuno, almuerzo o cena. Siempre estaremos ahi cuando nos necesites.
-      Adem&aacute;s, siempre nos hemos esforzado para complacerte, por eso nos hemos modernizado, publicancdo esta pagina web, para que podamos servirte desde la comodidad de tu casa. <br />
-      &iexcl;Lo que sea para que disfrut&eacute;s de un slice de tu pizza favorita!</p>
-      
-      <br />
-      
-      <h2 className="text-pizza text-3xl">Nuestros valores:</h2>
-      <p className="text-xl"><strong>Respeto:</strong> El respeto es uno de nuestros valores fundamentales. El respeto por el cliente nos permite generar un clima comodo y agradable, fundamental para que puedas disfrutar de tus alimentos. Igualmente es muy importante el respeto entre los empleados para que asi puedas disfrutar de la mejor pizza de Costa Rica.<br />
-        <strong>Calidad:</strong> La buscamos en cada uno de nuestros pasos, somos muy exigentes con nosotros mismos, incorporar calidad a cada uno de nuestros alimentos es nuestra prioridad #1.<br />
-        <strong>Compromiso:</strong> Es importante que cada una de las partes involucradas asuma el compromiso necesario para el logro de nuestros objetivos, hacerte disfrutar.</p>
-      
-      <br />
-      
-      <h2 className="text-pizza text-3xl">Servicio al cliente:</h2>
-      <p className="text-xl">Ya sea que estes dentro de nuestro local o desde tu casa, siempre estaremos listos para servirte. Nuestra misi&oacute;n es ofrecerte productos de calidad y una sonrisa para que puedas disfrutar del momento.</p>
+      <div className="row-3">
+        <div className="columns-2 flex md:flex-none ms:flex-none justify-around mt-14 mx-44 gap-12">
+          <div className="text-justify">
+            <h2 className="text-pizza text-3xl">&iquest;Quienes somos?</h2>
+            <br/>
+            <p className="text-xl">Magma Pizza es una franquicia nacional con 100% talento costarricense. Nuestro objetivo es unir a la familia y a los amigos con nuestras 
+            deliciosas pizzas. Ese es nuestro secreto: un lugar donde puedas pasar tus momentos especiales junto con nuestras pizzas llenas de sabor.<br/>  
+            Con tan solo unos pocos años en el mercado, hemos logrado ser parte de la historia de muchas familias costarricenses, acompañándolos día a día, ya sea en el desayuno,
+            almuerzo o cena. Siempre estaremos ahí cuando nos necesites.<br/><br/>
+            ¡Lo que sea por tu pizza favorita!
+             </p>
+          </div>
+          <div className="flex-none">
+            <img className="h-full w-full" src={img1} alt="Logo Swap it"/>
+          </div>
+        </div>
+
+        <br />
+        
+        <div className="columns-2 flex justify-around my-10 mx-44 gap-12">
+          <div className="flex-none">
+            <img className="h-full w-full" src={img2} alt="Logo Swap it"/>
+          </div>
+          <div className="text-justify">
+            <h2 className="text-pizza text-3xl">Nuestros valores</h2>
+            <br/>
+            <p className="text-xl">
+              <strong>Respeto:</strong> El respeto por el cliente nos permite generar un clima comodo y agradable, fundamental para que puedas disfrutar de tus alimentos. 
+              Igualmente es muy importante el respeto entre los empleados para que asi puedas disfrutar de la mejor pizza de Costa Rica.
+              <br/><br/>
+              <strong>Calidad:</strong> La obtenemos utilizando los mejores ingredientes, somos muy exigentes con nosotros mismos. 
+              Incorporar calidad a cada uno de nuestros alimentos es nuestra prioridad.
+              <br/><br/>
+              <strong>Compromiso:</strong> Es importante que cada uno de los miembros de nuestro equipo de trabajo asuma el compromiso necesario para alcanzar nuestro 
+              principal objetivo: hacerte disfrutar de la mejor pizza
+            </p>
+          </div>
+        </div>
+        
+        <br />
+        
+        <div className="columns-2 flex justify-around my-10 mx-44 gap-12">
+          <div className="text-justify">
+            <h2 className="text-pizza text-3xl">Servicio al cliente</h2>
+            <br/>
+            <p className="text-xl">
+              Ya sea que estes dentro de nuestro local o desde tu casa, o bien ya sea en el día o en la noche, siempre estaremos listos para servirte. 
+              Nuestra misión es:
+              <br/><br/>
+              Ofrecerte productos de la mejor calidad.
+              <br/><br/>
+              Ofrecerte una calida sonrisa.
+              <br/><br/>
+              Ofrecerte productos de la mejor calidad.
+              <br/><br/>
+              ¡Tu alegría es nuestra prioridad #1!
+            </p>
+          </div>
+          <div className="flex-none">
+            <img className="h-full w-full" src={img3} alt="Logo Swap it"/>
+          </div>
+        </div>
       </div> 
     </> 
   )
