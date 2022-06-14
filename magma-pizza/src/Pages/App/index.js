@@ -8,6 +8,9 @@ import Navbar from "../../Components/NavBar";
 import CrearCuenta from "../CrearCuenta";
 import Carrito from "../Carrito";
 import OrdenRecibida from "../OrdenRecibida";
+import Postres from "../Postres";
+import Promos from "../Promos";
+
 
 export default function App() {
   return (
@@ -22,6 +25,8 @@ export default function App() {
           <Route path="/CrearCuenta" element={<CrearCuenta />} />
           <Route path="/Carrito" element={<Carrito />} />
           <Route path="/OrdenRecibida" element={<OrdenRecibida />} />
+          <Route path="/Postres" element={<Postres />} />
+          <Route path="/Promos" element={<Promos />} />
         </Routes>
     </BrowserRouter>
   );
