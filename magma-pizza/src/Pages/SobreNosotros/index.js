@@ -24,7 +24,7 @@ export default function SobreNosotros() {
 
         <br />
         
-        <div className="columns-2 flex justify-around my-10 mx-44 gap-12">
+        <div className="columns-2 flex justify-around my-8 mx-44 gap-12">
           <div className="flex-none">
             <img className="h-full w-full" src={img2} alt="Logo Swap it"/>
           </div>
@@ -46,7 +46,7 @@ export default function SobreNosotros() {
         
         <br />
         
-        <div className="columns-2 flex justify-around my-10 mx-44 gap-12">
+        <div className="columns-2 flex justify-around mb-10 mx-44 gap-12">
           <div className="text-justify">
             <h2 className="text-pizza text-3xl">Servicio al cliente</h2>
             <br/>

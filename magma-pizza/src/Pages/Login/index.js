@@ -1,5 +1,6 @@
 import { FormInput } from "../../Components/FormItems";
 import { FormBtn } from "../../Components/Buttons";
+import {Link} from "react-router-dom";
 
 export default function Login() {
     return (
@@ -11,7 +12,7 @@ export default function Login() {
                         <FormInput label='Correo electrónico' name='email' type='email' placeholder='abc@mail.com' />
                         <FormInput label='Contraseña' name='password' type='password' />
                         <p className="text-white mb-1 hover:underline">¿Olvidó su contaseña?</p>
-                        <p className="text-white mb-6 hover:underline">¿No tiene cuenta? Regístrese</p>
+                        <Link to="/CrearCuenta" className="text-white mb-6 hover:underline">¿No tiene cuenta? Regístrese</Link>
                         <FormBtn text='Ingresar'/>
                     </div>
                 </form>

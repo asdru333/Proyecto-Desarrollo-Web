@@ -7,7 +7,7 @@ function SimpleMap()
     const AnyReactComponent = ({ text }) => <div>{text}</div>;
     return (
       <div
-        style={{ height: "50vh", width: "50vh" }}
+        style={{ height: "50vh", width: "100vh" }}
       >
         <GoogleMapReact
           bootstrapURLKeys={{
