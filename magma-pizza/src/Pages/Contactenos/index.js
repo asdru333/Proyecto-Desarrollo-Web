@@ -1,11 +1,7 @@
 import React from "react";
-import ReactMapboxGl, { Layer, Feature } from "react-mapbox-gl";
+import SimpleMap from "../../Components/Map/map";
 
 export default function Contactenos() {
-    const Map = ReactMapboxGl({
-      accessToken:
-        "pk.eyJ1IjoiYXozMzMiLCJhIjoiY2w0NmFpbHFxMDZrdTNqbWlpenl2ZnkxcCJ9.aukLD2fPOUS2vieY9zEE_w"
-    });
     return (
       <div className="row-4">
         <div className="mt-14 mx-44">
@@ -16,19 +12,7 @@ export default function Contactenos() {
           <br />
         </div>
         <div className="flex justify-center">
-          <Map
-            style="mapbox://styles/mapbox/streets-v8"
-            zoom={[15]}
-            center={[-84.04443, 9.9410820]}
-            containerStyle={{
-              height: "60vh",
-              width: "70vw"
-            }}
-            >
-            <Layer type="symbol" id="marker" layout={{ "icon-image": "marker-15" }}>
-              <Feature coordinates={[-84.04443, 9.9410820]} />
-            </Layer>
-          </Map>
+          <SimpleMap/>
         </div>
         <div className="columns-2 flex justify-between mt-16 md-10 mx-44 gap-12">  
           <div>
