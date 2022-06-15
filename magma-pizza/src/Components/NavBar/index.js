@@ -10,7 +10,7 @@ function Navbar() {
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
-
+  /** 
   const onMouseEnter = () => {
     if (window.innerWidth < 960) {
       setDropdown(false);
@@ -18,13 +18,22 @@ function Navbar() {
       setDropdown(true);
     }
   };
-
+  
   const onMouseLeave = () => {
     if (window.innerWidth < 960) {
       setDropdown(false);
     } else {
       setDropdown(false);
     }
+  };
+  */
+
+  const onMouseEnter = () => {
+    setDropdown(true);
+  };
+  
+  const onMouseLeave = () => {
+    setDropdown(false);
   };
 
   return (
