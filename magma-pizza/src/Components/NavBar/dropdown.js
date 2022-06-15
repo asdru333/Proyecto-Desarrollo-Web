@@ -29,12 +29,12 @@ function Dropdown() {
             </Link>
         </li>
         <li>
-            <Link className='dropdown-link' to='/' onClick={() => setClick(false)}>
+            <Link className='dropdown-link' to='/Postres' onClick={() => setClick(false)}>
                 Postres
             </Link>
         </li>
         <li>
-            <Link className='dropdown-link' to='/' onClick={() => setClick(false)}>
+            <Link className='dropdown-link' to='/Promos' onClick={() => setClick(false)}>
                 Combos y promociones
             </Link>
         </li>
