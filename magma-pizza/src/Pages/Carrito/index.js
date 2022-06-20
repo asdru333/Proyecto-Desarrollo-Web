@@ -5,7 +5,7 @@ export default function Carrito() {
     return (
         <div>
             <h1 className = 'text-3xl text-center mt-6'>Mi carrito</h1>
-            <div className = 'py-6 mt-5 mx-10 grid grid-cols-4 gap-y-6'>
+            <div className = 'w-4/5 py-6 mt-5 m-auto grid grid-cols-4 gap-y-6'>
                 <CartItem />
                 <CartItem />
                 <CartItem />

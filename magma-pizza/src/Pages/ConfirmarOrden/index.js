@@ -1,8 +1,10 @@
+import { Link } from 'react-router-dom';
+
 export default function ConfirmarOrden() {
     return (
         <div>  
             <h1 className = 'text-3xl text-center mt-6'>Completa tu compra</h1>
-            <div className = "flex flex-col gap-5 w-9/12 m-auto mt-5 p-5 items-center">
+            <div className = "flex flex-col gap-4 w-4/5 m-auto mt-5 p-5 items-center">
                 <div className = "">
                     <p className = "text-lg">Pizza Grande Pepperoni ₡6800</p>
                 </div>
@@ -21,12 +23,12 @@ export default function ConfirmarOrden() {
             </div>
 
             <div className = "flex w-9/12 m-auto gap-x-4 p-5 justify-center text-lg">
-                <input type="radio" value="store" defaultChecked name="pickup"/> Recoger en la tienda
-                <input type="radio" value="express" name="pickup"/> Express
+                <div><input className="form-radio text-yellow h-5 w-5" type="radio" value="store" defaultChecked name="pickup"/> Recoger en la tienda</div>
+                <div><input className="form-radio text-yellow h-5 w-5" type="radio" value="express" name="pickup"/> Express</div>
             </div>
 
             <div className = "flex w-9/12 m-auto justify-center">
-                <label className = "text-lg text-slate-900">
+                <label className = "text-lg text-slate-900 text-center">
                     Ingrese su nombre 
                     <input
                         name="name"
@@ -39,7 +41,9 @@ export default function ConfirmarOrden() {
             </div>
             <div className = "flex w-9/12 m-auto justify-center gap-x-10 pb-5">
                 <button className="h-10 w-56 bg-red hover:bg-light-red text-white text-lg font-bold rounded-md">Confirmar compra</button>
-                <button className="h-10 w-56 bg-red hover:bg-light-red text-white text-lg font-bold rounded-md">Volver al carrito</button>
+                <Link to={"/Carrito"}>
+                    <button className="h-10 w-56 bg-red hover:bg-light-red text-white text-lg font-bold rounded-md">Volver al carrito</button>
+                </Link>
             </div>
         </div>
     );
