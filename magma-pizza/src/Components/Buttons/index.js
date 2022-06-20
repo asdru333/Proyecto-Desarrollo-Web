@@ -4,21 +4,20 @@ import { Link } from 'react-router-dom';
 
 function GridItemBtn(props) {
     return <div>
-        <button className="h-10 w-40 bg-red hover:bg-light-red text-white font-bold py-2">{props.text}</button>
+        <button className="h-10 w-40 bg-red hover:bg-light-red text-white font-bold py-2 rounded-md">{props.text}</button>
     </div>
 }
 
 function SideMenuBtn(props) {
     const location = useLocation();  
-    let path = location.pathname;
     let sideBtnClass;
-    if(path.slice(0, 0) + path.slice(1, path.length) === props.link) { 
-        sideBtnClass = "h-14 w-64 bg-yellow text-lg font-bold py-2";
+    if(location.pathname === props.link) { 
+        sideBtnClass = "h-14 w-64 bg-yellow text-lg font-bold";
     } else {
-        sideBtnClass = "h-14 w-64 bg-red hover:bg-light-red text-white text-lg font-bold py-2";
+        sideBtnClass = "h-14 w-64 bg-red hover:bg-light-red text-white text-lg font-bold";
     }
     return <div>
-        <Link to={`/${props.link}`}>
+        <Link to={`${props.link}`}>
             <button className={sideBtnClass}>{props.text}</button>
         </Link>
     </div>
