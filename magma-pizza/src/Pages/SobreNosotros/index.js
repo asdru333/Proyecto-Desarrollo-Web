@@ -1,12 +1,13 @@
 import img1 from "../../Resources/Images/pizza_giratoria.png"
 import img2 from "../../Resources/Images/chef_group_smiling.png"
 import img3 from "../../Resources/Images/chef_taking_notes.png"
+import "./index.css"
 
 export default function SobreNosotros() {
   return (
     <>
       <div className="row-3">
-        <div className="columns-2 flex md:flex-none ms:flex-none justify-around mt-14 mx-44 gap-12">
+        <div className="personalWrapper">
           <div className="text-justify">
             <h2 className="text-pizza text-3xl">&iquest;Quienes somos?</h2>
             <br/>
@@ -21,10 +22,9 @@ export default function SobreNosotros() {
             <img className="h-full w-full" src={img1} alt="Logo Swap it"/>
           </div>
         </div>
-
         <br />
         
-        <div className="columns-2 flex justify-around my-8 mx-44 gap-12">
+        <div className="personalWrapper">
           <div className="flex-none">
             <img className="h-full w-full" src={img2} alt="Logo Swap it"/>
           </div>
@@ -46,7 +46,7 @@ export default function SobreNosotros() {
         
         <br />
         
-        <div className="columns-2 flex justify-around mb-10 mx-44 gap-12">
+        <div className="personalWrapper mb-10">
           <div className="text-justify">
             <h2 className="text-pizza text-3xl">Servicio al cliente</h2>
             <br/>
