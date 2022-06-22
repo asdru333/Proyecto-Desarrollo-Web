@@ -10,6 +10,8 @@ import Carrito from "../Carrito";
 import OrdenRecibida from "../OrdenRecibida";
 import Postres from "../Postres";
 import Promos from "../Promos";
+import ConfirmarOrden from "../ConfirmarOrden";
+import CreaTuPizza from "../CreaTuPizza";
 
 
 export default function App() {
@@ -27,6 +29,8 @@ export default function App() {
           <Route path="/OrdenRecibida" element={<OrdenRecibida />} />
           <Route path="/Postres" element={<Postres />} />
           <Route path="/Promos" element={<Promos />} />
+          <Route path="/ConfirmarOrden" element={<ConfirmarOrden />} />
+          <Route path="/CreaTuPizza" element={<CreaTuPizza />} />
         </Routes>
     </BrowserRouter>
   );

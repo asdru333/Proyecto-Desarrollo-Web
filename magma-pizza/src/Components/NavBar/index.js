@@ -61,7 +61,7 @@ function Navbar() {
           </li>
           <li className='nav-item'>
             <Link
-              to='/'
+              to='/CreaTuPizza'
               className='nav-links'
               onClick={closeMobileMenu}
             >
