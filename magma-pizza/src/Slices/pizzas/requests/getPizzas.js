@@ -3,7 +3,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 export const getPizzas = createAsyncThunk('pizzas/getPizzas', async (params, { getState }) => {
     const pizzasFetch = await fetch('http://localhost:7500/pizzas');
     const pizzasData = await pizzasFetch.json();
-    console.log("pizzasDate: ", pizzasData);
+    console.log("pizzasData: ", pizzasData);
     if (pizzasData.status === 200) {
         return pizzasData;
     } else {

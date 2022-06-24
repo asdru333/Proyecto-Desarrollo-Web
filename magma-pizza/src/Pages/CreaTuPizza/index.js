@@ -45,7 +45,7 @@ export default function CreaTuPizza() {
                 <div className="bg-red text-white rounded-3xl py-4">
                     <h2 className = 'text-2xl text-center'>Carnes</h2>
                     <div className = "flex m-auto gap-x-8 justify-center text-xl pt-2">
-                        <div><input className="form-radio text-yellow h-5 w-5" value="store" defaultChecked name="meat"/> Jamón</div>
+                        <div><input className="form-radio text-yellow h-5 w-5" type="checkbox" defaultChecked name="meat"/> Jamón</div>
                         <div><input className="form-radio text-yellow h-5 w-5" type="checkbox" value="express" name="meat"/> Carne molida</div>
                         <div><input className="form-radio text-yellow h-5 w-5" type="checkbox" value="express" name="meat"/> Tocineta</div>
                         <div><input className="form-radio text-yellow h-5 w-5" type="checkbox" value="express" name="meat"/> Pepperoni</div>
