@@ -114,8 +114,8 @@ function Navbar() {
           </li>
           </div>
         </ul>
-        <Link to='/' className='button ml-20' onClick={closeMobileMenu}>
-            <TiShoppingCart color="white" fontSize="3em"/>
+        <Link to='/' className='button ml-20 text-white text-6xl' onClick={closeMobileMenu}>
+            <TiShoppingCart/>
         </Link> 
       </nav>
     </>

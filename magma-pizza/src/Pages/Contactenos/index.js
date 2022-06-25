@@ -1,5 +1,7 @@
 import React from "react";
 import SimpleMap from "../../Components/Map/map";
+import {TiSocialFacebook, TiSocialInstagram, TiSocialTwitter} from "react-icons/ti";
+
 
 export default function Contactenos() {
     return (
@@ -29,8 +31,14 @@ export default function Contactenos() {
           </p>  
         </div>  
         <br/>
-        <div className="flex justify-center my-20">
-          <h2 className="text-pizza text-3xl">Redes sociales:</h2>
+        <div className="flex flex-col mb-10">
+          <div className="text-center">
+            <h2 className="text-pizza text-3xl">Redes sociales:</h2>
+            <br/>
+          </div>
+          <div className="flex justify-center gap-9 text-4xl">
+            <TiSocialFacebook className="cursor-pointer"/> <TiSocialTwitter className="cursor-pointer"/> <TiSocialInstagram className="cursor-pointer"/>
+          </div>
         </div>
       </div>  
     )
