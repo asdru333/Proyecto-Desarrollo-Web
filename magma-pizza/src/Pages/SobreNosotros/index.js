@@ -1,7 +1,6 @@
 import img1 from "../../Resources/Images/pizza_giratoria.png"
 import img2 from "../../Resources/Images/chef_group_smiling.png"
 import img3 from "../../Resources/Images/chef_taking_notes.png"
-import "./index.css"
 
 export default function SobreNosotros() {
   return (
