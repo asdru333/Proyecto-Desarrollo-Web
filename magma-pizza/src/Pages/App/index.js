@@ -12,6 +12,8 @@ import Postres from "../Postres";
 import Promos from "../Promos";
 import ConfirmarOrden from "../ConfirmarOrden";
 import CreaTuPizza from "../CreaTuPizza";
+import Pizzas from "../Pizzas";
+import Bebidas from "../Bebidas";
 
 
 export default function App() {
@@ -23,10 +25,12 @@ export default function App() {
           <Route path="/Contactenos" element={<Contactenos />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/SobreNosotros" element={<SobreNosotros />} />
-          <Route path="/Acompanamientos" element={<Acompanamientos />} />
           <Route path="/CrearCuenta" element={<CrearCuenta />} />
           <Route path="/Carrito" element={<Carrito />} />
           <Route path="/OrdenRecibida" element={<OrdenRecibida />} />
+          <Route path="/Pizzas" element={<Pizzas />} />
+          <Route path="/Bebidas" element={<Bebidas />} />
+          <Route path="/Acompanamientos" element={<Acompanamientos />} />
           <Route path="/Postres" element={<Postres />} />
           <Route path="/Promos" element={<Promos />} />
           <Route path="/ConfirmarOrden" element={<ConfirmarOrden />} />

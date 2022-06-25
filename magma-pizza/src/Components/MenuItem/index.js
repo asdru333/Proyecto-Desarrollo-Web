@@ -2,16 +2,16 @@ import React from 'react';
 import { GridItemBtn } from '../Buttons';
 
 
-function MenuItem(){
+function MenuItem({name, description, price, image, alt}){
     return <div>
         <div className="flex flex-col">
             <div className="flex justify-center">
-                <img className = "w-56" src={require('./pan.jpg')} alt="pan" />
+                <img className = "w-56" src={image} alt={alt} />
             </div>
             <div className = "text-center flex flex-col gap-1">
-                <p>nombre</p>
-                <p>descripcion</p>
-                <p>precio</p>
+                <p>{name}</p>
+                <p>{description}</p>
+                <p>{price}</p>
                 <GridItemBtn text= 'Agregar al carrito' />
             </div>
         </div>
