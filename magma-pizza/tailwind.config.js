@@ -11,8 +11,12 @@ module.exports = {
         'black' : '#555E65',
         'yellow' : '#F6AE28',
         'pizza' :'#E53D00'
+      },
+      screens: {
+        'cel': {'max': '960px'}
       }
     },
+    
   },
   plugins: [
     require('@tailwindcss/forms')

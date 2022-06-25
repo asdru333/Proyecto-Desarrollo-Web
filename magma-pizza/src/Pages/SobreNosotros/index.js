@@ -7,7 +7,7 @@ export default function SobreNosotros() {
   return (
     <>
       <div className="row-3">
-        <div className="personalWrapper">
+        <div className="flex flex-row columns-2 cel:flex-col-reverse justify-around mt-10 mx-40 gap-3">
           <div className="text-justify">
             <h2 className="text-pizza text-3xl">&iquest;Quienes somos?</h2>
             <br/>
@@ -24,7 +24,7 @@ export default function SobreNosotros() {
         </div>
         <br />
         
-        <div className="personalWrapper">
+        <div className="flex flex-row columns-2 cel:flex-col justify-around mt-10 mx-40 gap-3">
           <div className="flex-none">
             <img className="h-full w-full" src={img2} alt="Logo Swap it"/>
           </div>
@@ -46,7 +46,7 @@ export default function SobreNosotros() {
         
         <br />
         
-        <div className="personalWrapper mb-10">
+        <div className="flex flex-row columns-2 cel:flex-col-reverse justify-around my-10 mx-40 gap-3">
           <div className="text-justify">
             <h2 className="text-pizza text-3xl">Servicio al cliente</h2>
             <br/>

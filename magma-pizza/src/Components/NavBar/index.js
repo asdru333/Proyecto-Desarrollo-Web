@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import logo from "../../Resources/Images/logo_magma_pizza.png";
 import './navbar.css';
 import Dropdown from './dropdown';
+import {TiShoppingCart} from "react-icons/ti";
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -113,8 +114,8 @@ function Navbar() {
           </li>
           </div>
         </ul>
-        <Link to='/' className='button' onClick={closeMobileMenu}>
-            <img className="h-20 w-20" src={logo} alt="Logo"/>
+        <Link to='/' className='button ml-20' onClick={closeMobileMenu}>
+            <TiShoppingCart color="white" fontSize="3em"/>
         </Link> 
       </nav>
     </>
