@@ -13,13 +13,13 @@ function Dropdown() {
         className={click ? 'dropdown-menu clicked' : 'dropdown-menu'}
       >
         <li>
-            <Link className='dropdown-link' to='/' onClick={() => setClick(false)}>
+            <Link className='dropdown-link' to='/Pizzas' onClick={() => setClick(false)}>
                 Pizza
             </Link>
 
         </li>
         <li>
-            <Link className='dropdown-link' to='/' onClick={() => setClick(false)}>
+            <Link className='dropdown-link' to='/Bebidas' onClick={() => setClick(false)}>
                 Bebidas
             </Link>
         </li>
