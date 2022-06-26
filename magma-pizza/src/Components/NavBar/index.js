@@ -4,6 +4,7 @@ import logo from "../../Resources/Images/logo_magma_pizza.png";
 import './navbar.css';
 import Dropdown from './dropdown';
 import {TiShoppingCart} from "react-icons/ti";
+import Mixpanel from '../../Services/mixpanel';
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -70,7 +71,7 @@ function Navbar() {
             <Link
               to='/CreaTuPizza'
               className='nav-links'
-              onClick={closeMobileMenu}
+              onClick={() => {setClick(false); Mixpanel.track(Mixpanel.TYPES.GO_TO_CREATE_PIZZA);}}
             >
               Cree su propia pizza
             </Link>
@@ -79,7 +80,7 @@ function Navbar() {
             <Link
               to='/Login'
               className='nav-links'
-              onClick={closeMobileMenu}
+              onClick={() => {setClick(false); Mixpanel.track(Mixpanel.TYPES.GO_TO_LOGIN);}}
             >
               Inicie sesión
             </Link>
@@ -88,7 +89,7 @@ function Navbar() {
             <Link
               to='/SobreNosotros'
               className='nav-links'
-              onClick={closeMobileMenu}
+              onClick={() => {setClick(false); Mixpanel.track(Mixpanel.TYPES.GO_TO_ABOUT_US);}}
             >
               Sobre nosotros
             </Link>
@@ -97,7 +98,7 @@ function Navbar() {
             <Link
               to='/Contactenos'
               className='nav-links'
-              onClick={closeMobileMenu}
+              onClick={() => {setClick(false); Mixpanel.track(Mixpanel.TYPES.GO_TO_CONTACT_US);}}
             >
               Contáctenos
             </Link>
@@ -107,14 +108,17 @@ function Navbar() {
             <Link
               to='/'
               className='nav-links'
-              onClick={closeMobileMenu}
+              onClick={() => {setClick(false); Mixpanel.track(Mixpanel.TYPES.GO_TO_CART);}}
             >
               Carrito
             </Link>
           </li>
           </div>
         </ul>
-        <Link to='/' className='button ml-20 text-white text-6xl' onClick={closeMobileMenu}>
+        <Link 
+          to='/' 
+          className='button ml-20 text-white text-6xl' 
+          onClick={() => {setClick(false); Mixpanel.track(Mixpanel.TYPES.GO_TO_CART);}}>
             <TiShoppingCart/>
         </Link> 
       </nav>
