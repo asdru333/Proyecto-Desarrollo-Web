@@ -6,7 +6,7 @@ export default function Promos() {
         <div>
             <div class="py-6 mt-5 flex">
                 <SideMenu />
-                <ProductGrid />
+                <ProductGrid url='http://localhost:7500/combos/'/>
             </div>
         </div>
     );
