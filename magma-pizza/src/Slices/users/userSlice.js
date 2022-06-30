@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { userReducers } from "./reducers";
 import { onPostLoginFullfiled, onPostLoginRejected, postLogin } from "./requests/postLogin";
+import { onPostRecoverPassFullfiled, onPostRecoverPassRejected, postRecoverPass } from "./requests/postRecoverPass";
 
 const userSlice = createSlice({
     name: 'user',
@@ -15,6 +16,8 @@ const userSlice = createSlice({
         builder
             .addCase(postLogin.fulfilled, onPostLoginFullfiled)
             .addCase(postLogin.rejected, onPostLoginRejected)
+            .addCase(postRecoverPass.fulfilled, onPostRecoverPassFullfiled)
+            .addCase(postRecoverPass.rejected, onPostRecoverPassRejected)
     }
 });
 
