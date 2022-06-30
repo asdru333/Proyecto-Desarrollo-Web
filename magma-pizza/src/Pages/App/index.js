@@ -14,6 +14,8 @@ import ConfirmarOrden from "../ConfirmarOrden";
 import CreaTuPizza from "../CreaTuPizza";
 import Pizzas from "../Pizzas";
 import Bebidas from "../Bebidas";
+import RecuperarContrasena from "../RecuperarContrasena";
+import ContrasenaNueva from "../ContrasenaNueva";
 
 
 export default function App() {
@@ -35,6 +37,8 @@ export default function App() {
           <Route path="/Promos" element={<Promos />} />
           <Route path="/ConfirmarOrden" element={<ConfirmarOrden />} />
           <Route path="/CreaTuPizza" element={<CreaTuPizza />} />
+          <Route path="/RecuperarContrasena" element={<RecuperarContrasena />} />
+          <Route path="/ContrasenaNueva" element={<ContrasenaNueva />} />
         </Routes>
     </BrowserRouter>
   );
