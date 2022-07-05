@@ -7,42 +7,37 @@ export default function CreaTuPizza() {
     const [crust, setCrust] = useState("");
     const [sauce, setSauce] = useState("");
     const [cheese, setCheese] = useState("");
-    const [prevName, setPrevName] = useState("");
-    const [prevPrice, setPrevPrice] = useState(0);
-
+    const [prevPrices, setPrevPrices] = useState({
+      size : 0,
+      crust : 0,
+      sauce : 0,
+      cheese : 0
+    });
     const [meats, setMeats] = useState([]);
     const [vegetables, setVegetables] = useState([]);
     const [extras, setExtras] = useState([]);
     const [price, setPrice] = useState(0);
     const dispatch = useDispatch();
 
-    const increasePrice = (increment) => {
-      setPrice(price + increment);
-    };
-
-    const decreasePrice = (decrement) => {
-      setPrice(price - decrement);
-    };
-
-    const handleRadioChange = (ingredient, setter, item, name, itemPrice) => {
-      if(name === prevName) {
-        decreasePrice(prevPrice);
+    const handleRadioChange = (setter, item, name, itemPrice) => {
+      if(prevPrices[name] !== 0){
+        let newPrice = price - prevPrices[name] + itemPrice;
+        setPrice(newPrice);
+      } else {
+        let newPrice = price + itemPrice;
+        setPrice(newPrice);
       }
+      setPrevPrices({...prevPrices, [name] : itemPrice});
       setter(item);
-      setPrevName(name);
-      setPrevPrice(price);
-      increasePrice(itemPrice);
     }
 
-    const handleCheckboxChange = (ingredient, setter, item, price) => {
+    const handleCheckboxChange = (ingredient, setter, item, itemPrice) => {
       if (ingredient.some(option => option === item)) { //remove item
         setter(ingredient.filter(option => option !== item));
-        console.log(ingredient);
-        decreasePrice(price);
+        setPrice(price - itemPrice);
       } else {
         setter([...ingredient,item]); //add item
-        console.log(ingredient);
-        increasePrice(price);
+        setPrice(price + itemPrice);
       }
     }
 
@@ -53,37 +48,37 @@ export default function CreaTuPizza() {
                 <div className="bg-red text-white rounded-3xl py-4">
                     <h2 className = 'text-2xl text-center'>Tamaño</h2>
                     <div className = "flex m-auto gap-x-8 justify-center text-xl pt-2">
-                        <div><input className="form-radio text-yellow h-5 w-5" type="radio" value="small" name="size" onChange={(evt) => {handleRadioChange(size, setSize, evt.target.value, evt.target.name, 1000); }}/> Pequeña</div>
-                        <div><input className="form-radio text-yellow h-5 w-5" type="radio" value="medium" name="size" onChange={(evt) => {handleRadioChange(size, setSize, evt.target.value, evt.target.name, 2000); }}/> Mediana</div>
-                        <div><input className="form-radio text-yellow h-5 w-5" type="radio" value="large" name="size" onChange={(evt) => {handleRadioChange(size, setSize, evt.target.value, evt.target.name, 3000); }}/> Grande</div>
-                        <div><input className="form-radio text-yellow h-5 w-5" type="radio" value="monster" name="size" onChange={(evt) => {handleRadioChange(size, setSize, evt.target.value, evt.target.name, 4000); }}/> Monstruo</div>
+                        <div><input className="form-radio text-yellow h-5 w-5" type="radio" value="small" name="size" onChange={(evt) => {handleRadioChange(setSize, evt.target.value, evt.target.name, 1000); }}/> Pequeña</div>
+                        <div><input className="form-radio text-yellow h-5 w-5" type="radio" value="medium" name="size" onChange={(evt) => {handleRadioChange(setSize, evt.target.value, evt.target.name, 2000); }}/> Mediana</div>
+                        <div><input className="form-radio text-yellow h-5 w-5" type="radio" value="large" name="size" onChange={(evt) => {handleRadioChange(setSize, evt.target.value, evt.target.name, 3000); }}/> Grande</div>
+                        <div><input className="form-radio text-yellow h-5 w-5" type="radio" value="monster" name="size" onChange={(evt) => {handleRadioChange(setSize, evt.target.value, evt.target.name, 4000); }}/> Monstruo</div>
                     </div>
                 </div>
 
                 <div className="">
                     <h2 className = 'text-2xl text-center'>Pasta</h2>
                     <div className = "flex m-auto gap-x-8 justify-center text-xl pt-2">
-                        <div><input className="form-radio text-yellow h-5 w-5" type="radio" value="thin" name="crust" onChange={(evt) => {handleRadioChange(crust, setCrust, evt.target.value, 0); }}/> Delgada</div>
-                        <div><input className="form-radio text-yellow h-5 w-5" type="radio" value="thick" name="crust" onChange={(evt) => {handleRadioChange(crust, setCrust, evt.target.value, 500); }}/> Gruesa</div>
-                        <div><input className="form-radio text-yellow h-5 w-5" type="radio" value="cheesy" name="crust"onChange={(evt) => {handleRadioChange(crust, setCrust, evt.target.value, 800); }}/> Cheesy</div>
+                        <div><input className="form-radio text-yellow h-5 w-5" type="radio" value="thin" name="crust" onChange={(evt) => {handleRadioChange(setCrust, evt.target.value, evt.target.name, 0); }}/> Delgada</div>
+                        <div><input className="form-radio text-yellow h-5 w-5" type="radio" value="thick" name="crust" onChange={(evt) => {handleRadioChange(setCrust, evt.target.value, evt.target.name, 500); }}/> Gruesa</div>
+                        <div><input className="form-radio text-yellow h-5 w-5" type="radio" value="cheesy" name="crust"onChange={(evt) => {handleRadioChange(setCrust, evt.target.value, evt.target.name, 800); }}/> Cheesy</div>
                     </div>
                 </div>
 
                 <div className="bg-red text-white rounded-3xl py-4">
                     <h2 className = 'text-2xl text-center'>Salsas</h2>
                     <div className = "flex m-auto gap-x-8 justify-center text-xl pt-2">
-                        <div><input className="form-radio text-yellow h-5 w-5" type="radio" value="tomato" name="sauce" onChange={(evt) => {handleRadioChange(sauce, setSauce, evt.target.value, 200); }}/> Tomate</div>
-                        <div><input className="form-radio text-yellow h-5 w-5" type="radio" value="alfredo" name="sauce" onChange={(evt) => {handleRadioChange(sauce, setSauce, evt.target.value, 400); }}/> Alfredo</div>
-                        <div><input className="form-radio text-yellow h-5 w-5" type="radio" value="bbq" name="sauce" onChange={(evt) => {handleRadioChange(sauce, setSauce, evt.target.value, 400); }}/> BBQ</div>
+                        <div><input className="form-radio text-yellow h-5 w-5" type="radio" value="tomato" name="sauce" onChange={(evt) => {handleRadioChange(setSauce, evt.target.value, evt.target.name, 200); }}/> Tomate</div>
+                        <div><input className="form-radio text-yellow h-5 w-5" type="radio" value="alfredo" name="sauce" onChange={(evt) => {handleRadioChange(setSauce, evt.target.value, evt.target.name, 400); }}/> Alfredo</div>
+                        <div><input className="form-radio text-yellow h-5 w-5" type="radio" value="bbq" name="sauce" onChange={(evt) => {handleRadioChange(setSauce, evt.target.value, evt.target.name, 400); }}/> BBQ</div>
                     </div>
                 </div>
 
                 <div className="">
                     <h2 className = 'text-2xl text-center'>Quesos</h2>
                     <div className = "flex m-auto gap-x-8 justify-center text-xl pt-2">
-                        <div><input className="form-radio text-yellow h-5 w-5" type="radio" value="three" name="cheese"  onChange={(evt) => {handleRadioChange(cheese, setCheese, evt.target.value, 300); }}/> Tres quesos</div>
-                        <div><input className="form-radio text-yellow h-5 w-5" type="radio" value="parm" name="cheese" onChange={(evt) => {handleRadioChange(cheese, setCheese, evt.target.value, 400); }}/> Parmesano y Romano</div>
-                        <div><input className="form-radio text-yellow h-5 w-5" type="radio" value="blue" name="cheese" onChange={(evt) => {handleRadioChange(cheese, setCheese, evt.target.value, 400); }}/> Queso azul</div>
+                        <div><input className="form-radio text-yellow h-5 w-5" type="radio" value="three" name="cheese"  onChange={(evt) => {handleRadioChange(setCheese, evt.target.value, evt.target.name, 300); }}/> Tres quesos</div>
+                        <div><input className="form-radio text-yellow h-5 w-5" type="radio" value="parm" name="cheese" onChange={(evt) => {handleRadioChange(setCheese, evt.target.value, evt.target.name, 400); }}/> Parmesano y Romano</div>
+                        <div><input className="form-radio text-yellow h-5 w-5" type="radio" value="blue" name="cheese" onChange={(evt) => {handleRadioChange(setCheese, evt.target.value, evt.target.name, 400); }}/> Queso azul</div>
                     </div>
                 </div>
 
