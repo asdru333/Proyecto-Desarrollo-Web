@@ -28,7 +28,18 @@ export default function Home() {
       </div>
 
       <div className="text-center text-pizza text-3xl cel:text-lg my-10">
-        Si no puede decidir ¡Dale un vistazo a nuestros combos!
+        Si no puede decidir ¡Dale un vistazo a nuestras promociones!
+      </div>
+
+      <div className="lg:flex cel:grid lg:mx-36 cel:mx-10 lg:gap-56 cel:gap-4 my-10">
+          <HomeItem description= '3 slices de pizza de jamón' image= 'https://ci0137.s3.amazonaws.com/magma/promos/3-slices-jamon.png' alt= '3 slices de pizza de jamón' />
+          <HomeItem description= 'pizzas 2x1' image= 'https://ci0137.s3.amazonaws.com/magma/promos/doble-pizza-+jamon.png' alt= 'pizzas 2x1' />
+      </div>
+
+      <div className="ml-36 cel:ml-10 mb-10" >
+        <Link to="/Promos">
+          <button className="h-12 w-52 bg-pizza hover:bg-yellow text-white text-lg rounded-md">Vea el menú de combos</button>
+        </Link>
       </div>
 
     </div>
