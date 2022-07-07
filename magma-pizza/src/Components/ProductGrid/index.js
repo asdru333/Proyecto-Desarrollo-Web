@@ -23,7 +23,7 @@ function ProductGrid({url}) {
             <div className="w-16 h-16 border-b-2 border-pizza rounded-full animate-spin"></div>
         </div> : (
         <div>
-            <div className="mx-10 grid lg:grid-cols-5 gap-8 lg:pr-40">
+            <div className="mx-10 mb-20 grid lg:grid-cols-5 gap-8 lg:pr-40">
             {
                 items && items.map((i) => {
                     return (

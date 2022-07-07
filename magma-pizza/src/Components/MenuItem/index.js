@@ -6,7 +6,7 @@ function MenuItem({name, description, price, image, alt}){
     return <div>
         <div className="flex flex-col">
             <div className="flex justify-center">
-                <img className = "w-56" src={image} alt={alt} />
+                <img className = "w-56 h-56" src={image} alt={alt} />
             </div>
             <div className = "text-center flex flex-col gap-1">
                 <p>{name}</p>
@@ -34,5 +34,13 @@ function CartItem(){
     </div>
 }
 
+function HomeItem({description, image, alt})
+{
+    return <div>
+        <img className = "w-56 h-56" src={image} alt={alt} />
+        <p className="lg:text-center text-lg text-pizza">{description}</p>
+    </div>
+}
 
-export { MenuItem, CartItem }
+
+export { MenuItem, CartItem, HomeItem }

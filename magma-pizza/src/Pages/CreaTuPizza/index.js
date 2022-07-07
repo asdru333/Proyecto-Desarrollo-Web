@@ -44,10 +44,10 @@ export default function CreaTuPizza() {
     return (
         <div>  
             <h1 className = 'text-3xl text-center my-5'>Crea tu propia pizza</h1>
-            <div className="flex flex-col w-9/12 gap-y-5 justify-center m-auto">
+            <div className="flex flex-col lg:w-9/12 cel:w-full gap-y-5 justify-center m-auto">
                 <div className="bg-red text-white rounded-3xl py-4">
-                    <h2 className = 'text-2xl text-center'>Tamaño</h2>
-                    <div className = "flex m-auto gap-x-8 justify-center text-xl pt-2">
+                    <h2 className = "text-2xl text-center">Tamaño</h2>
+                    <div className = "flex m-auto lg:gap-x-8 cel:gap-x-4 justify-center lg:text-xl cel:text-base pt-2">
                         <div><input className="form-radio text-yellow h-5 w-5" type="radio" value="small" name="size" onChange={(evt) => {handleRadioChange(setSize, evt.target.value, evt.target.name, 1000); }}/> Pequeña</div>
                         <div><input className="form-radio text-yellow h-5 w-5" type="radio" value="medium" name="size" onChange={(evt) => {handleRadioChange(setSize, evt.target.value, evt.target.name, 2000); }}/> Mediana</div>
                         <div><input className="form-radio text-yellow h-5 w-5" type="radio" value="large" name="size" onChange={(evt) => {handleRadioChange(setSize, evt.target.value, evt.target.name, 3000); }}/> Grande</div>
@@ -56,8 +56,8 @@ export default function CreaTuPizza() {
                 </div>
 
                 <div className="">
-                    <h2 className = 'text-2xl text-center'>Pasta</h2>
-                    <div className = "flex m-auto gap-x-8 justify-center text-xl pt-2">
+                    <h2 className = "text-2xl text-center">Pasta</h2>
+                    <div className = "flex m-auto lg:gap-x-8 cel:gap-x-4 justify-center lg:text-xl cel:text-base pt-2">
                         <div><input className="form-radio text-yellow h-5 w-5" type="radio" value="thin" name="crust" onChange={(evt) => {handleRadioChange(setCrust, evt.target.value, evt.target.name, 0); }}/> Delgada</div>
                         <div><input className="form-radio text-yellow h-5 w-5" type="radio" value="thick" name="crust" onChange={(evt) => {handleRadioChange(setCrust, evt.target.value, evt.target.name, 500); }}/> Gruesa</div>
                         <div><input className="form-radio text-yellow h-5 w-5" type="radio" value="cheesy" name="crust"onChange={(evt) => {handleRadioChange(setCrust, evt.target.value, evt.target.name, 800); }}/> Cheesy</div>
@@ -65,8 +65,8 @@ export default function CreaTuPizza() {
                 </div>
 
                 <div className="bg-red text-white rounded-3xl py-4">
-                    <h2 className = 'text-2xl text-center'>Salsas</h2>
-                    <div className = "flex m-auto gap-x-8 justify-center text-xl pt-2">
+                    <h2 className = "text-2xl text-center">Salsas</h2>
+                    <div className = "flex m-auto lg:gap-x-8 cel:gap-x-4 justify-center lg:text-xl cel:text-base pt-2">
                         <div><input className="form-radio text-yellow h-5 w-5" type="radio" value="tomato" name="sauce" onChange={(evt) => {handleRadioChange(setSauce, evt.target.value, evt.target.name, 200); }}/> Tomate</div>
                         <div><input className="form-radio text-yellow h-5 w-5" type="radio" value="alfredo" name="sauce" onChange={(evt) => {handleRadioChange(setSauce, evt.target.value, evt.target.name, 400); }}/> Alfredo</div>
                         <div><input className="form-radio text-yellow h-5 w-5" type="radio" value="bbq" name="sauce" onChange={(evt) => {handleRadioChange(setSauce, evt.target.value, evt.target.name, 400); }}/> BBQ</div>
@@ -74,8 +74,8 @@ export default function CreaTuPizza() {
                 </div>
 
                 <div className="">
-                    <h2 className = 'text-2xl text-center'>Quesos</h2>
-                    <div className = "flex m-auto gap-x-8 justify-center text-xl pt-2">
+                    <h2 className = "text-2xl text-center">Quesos</h2>
+                    <div className = "flex m-auto lg:gap-x-8 cel:gap-x-4 justify-center lg:text-xl cel:text-base pt-2">
                         <div><input className="form-radio text-yellow h-5 w-5" type="radio" value="three" name="cheese"  onChange={(evt) => {handleRadioChange(setCheese, evt.target.value, evt.target.name, 300); }}/> Tres quesos</div>
                         <div><input className="form-radio text-yellow h-5 w-5" type="radio" value="parm" name="cheese" onChange={(evt) => {handleRadioChange(setCheese, evt.target.value, evt.target.name, 400); }}/> Parmesano y Romano</div>
                         <div><input className="form-radio text-yellow h-5 w-5" type="radio" value="blue" name="cheese" onChange={(evt) => {handleRadioChange(setCheese, evt.target.value, evt.target.name, 400); }}/> Queso azul</div>
@@ -83,8 +83,8 @@ export default function CreaTuPizza() {
                 </div>
 
                 <div className="bg-red text-white rounded-3xl py-4">
-                    <h2 className = 'text-2xl text-center'>Carnes</h2>
-                    <div className = "flex m-auto gap-x-8 justify-center text-xl pt-2">
+                    <h2 className = "text-2xl text-center">Carnes</h2>
+                    <div className = "flex m-auto lg:gap-x-8 cel:gap-x-4 justify-center lg:text-xl cel:text-base pt-2">
                         <div><input className="form-radio text-yellow h-5 w-5" type="checkbox" value="ham" name="meat" onChange={(evt) => {handleCheckboxChange(meats, setMeats, evt.target.value, 100); }}/> Jamón</div>
                         <div><input className="form-radio text-yellow h-5 w-5" type="checkbox" value="beef" name="meat" onChange={(evt) => {handleCheckboxChange(meats, setMeats, evt.target.value, 200); }}/> Carne molida</div>
                         <div><input className="form-radio text-yellow h-5 w-5" type="checkbox" value="bacon" name="meat" onChange={(evt) => {handleCheckboxChange(meats, setMeats, evt.target.value, 200); }}/> Tocineta</div>
@@ -95,8 +95,8 @@ export default function CreaTuPizza() {
                 </div>
 
                 <div className="">
-                    <h2 className = 'text-2xl text-center'>Vegetales y Frutas</h2>
-                    <div className = "flex m-auto gap-x-8 justify-center text-xl pt-2">
+                    <h2 className = "text-2xl text-center">Vegetales y Frutas</h2>
+                    <div className = "flex m-auto lg:gap-x-8 cel:gap-x-4 justify-center lg:text-xl cel:text-base pt-2">
                         <div><input className="form-radio text-yellow h-5 w-5" type="checkbox" value="onions" name="vegetables" onChange={(evt) => {handleCheckboxChange(vegetables, setVegetables, evt.target.value, 50); }}/> Cebolla</div>
                         <div><input className="form-radio text-yellow h-5 w-5" type="checkbox" value="peppers" name="vegetables" onChange={(evt) => {handleCheckboxChange(vegetables, setVegetables,evt.target.value, 50); }}/> Chile</div>
                         <div><input className="form-radio text-yellow h-5 w-5" type="checkbox" value="olives" name="vegetables" onChange={(evt) => {handleCheckboxChange(vegetables, setVegetables,evt.target.value, 100); }}/> Aceitunas</div>
@@ -107,8 +107,8 @@ export default function CreaTuPizza() {
                 </div>
 
                 <div className="bg-red text-white rounded-3xl py-4">
-                    <h2 className = 'text-2xl text-center'>Extras</h2>
-                    <div className = "flex m-auto gap-x-8 justify-center text-xl pt-2">
+                    <h2 className = "text-2xl text-center">Extras</h2>
+                    <div className = "flex m-auto lg:gap-x-8 cel:gap-x-4 justify-center lg:text-xl cel:text-base pt-2">
                         <div><input className="form-radio text-yellow h-5 w-5" type="checkbox" value="cheese" name="extra" onChange={(evt) => {handleCheckboxChange(extras, setExtras, evt.target.value, 400); }}/> Queso extra</div>
                         <div><input className="form-radio text-yellow h-5 w-5" type="checkbox" value="sauce" name="extra" onChange={(evt) => {handleCheckboxChange(extras, setExtras, evt.target.value, 200); }}/> Salsa extra</div>
                     </div>

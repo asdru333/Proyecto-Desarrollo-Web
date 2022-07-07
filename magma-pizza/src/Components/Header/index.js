@@ -22,8 +22,8 @@ function Header() {
         <div className="mt-7 text-lg hover:text-yellow" >
           <Link to="/SobreNosotros">Sobre nosotros</Link> 
         </div>
-        <div className="mt-7 text-lg hover:text-yellow" >
-          <Link to="/Contactenos">Contáctenos</Link>
+       <div className="mt-7 text-lg hover:text-yellow" >
+          <Link  to="/Contactenos">Contáctenos</Link>
         </div>
         <a href="/"><img className="h-20 w-20" src="https://rb.gy/3ueukh" alt="Logo Swap it"/></a>
       </div>
