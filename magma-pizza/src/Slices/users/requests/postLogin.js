@@ -29,14 +29,11 @@ export const onPostLoginFullfiled = (state, action) => {
         state.user = null;
         state.errorMessage = action.payload.message;
     } else {
-      /*
         Mixpanel.identify(action.payload.id);
             Mixpanel.people.set({
             $name: action.payload.name,
-            $email: action.payload.email,
-            
+            $email: action.payload.email,  
         });
-        */
         state.userIsLoggedIn = true;
         state.user = action.payload;
     }
