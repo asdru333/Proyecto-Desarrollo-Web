@@ -10,6 +10,7 @@ const userSlice = createSlice({
         userIsLoggedIn: false,
         errorMessage: "",
         users: null,
+        userIsRecoveringPass: false
     },
     reducers: userReducers,
     extraReducers(builder) {

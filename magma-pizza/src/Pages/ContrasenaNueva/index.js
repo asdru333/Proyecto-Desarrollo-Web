@@ -1,7 +1,19 @@
 import { FormInput } from "../../Components/FormItems";
 import { FormBtn } from "../../Components/Buttons";
+import { useState } from "react";
+import { patchResetPass } from "../../Slices/users/requests/patchResetPass";
 
 export default function ContrasenaNueva() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [passwordConfirmation, setPasswordConfirmation] = useState("");
+
+  /*
+    Datos de prueba:
+    email: "rodrigo.piedra@ucr.ac.cr",
+    password: cualquiera,
+    code: 963221,
+  */
     return (
         <div>
             <div className = "flex justify-center h-100">

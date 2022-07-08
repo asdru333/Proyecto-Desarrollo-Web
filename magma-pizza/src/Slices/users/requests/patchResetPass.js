@@ -1,17 +1,19 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-export const postRecoverPass = createAsyncThunk('usuarios/postRecoverPass', async (credentials) => {
-    const recoverFetch = await fetch('http://localhost:7500/users/recover-password', {
-        method: 'POST',
+export const patchResetPass = createAsyncThunk('usuarios/postResetPass', async (credentials) => {
+    const resetFetch = await fetch('http://localhost:7500/users/reset-password', {
+        method: 'PATCH',
         headers: {
             "Content-type": "application/json",
         },
         body: JSON.stringify({
             email: credentials.email,
+            password: credentials.password,
+            code: credentials.code
         }),
     });
-    const userData = await recoverFetch.json();
-    if (recoverFetch.status === 200) {
+    const userData = await resetFetch.json();
+    if (resetFetch.status === 200) {
         return userData;
     } else {
         return {
@@ -21,17 +23,17 @@ export const postRecoverPass = createAsyncThunk('usuarios/postRecoverPass', asyn
     }
 });
 
-export const onPostRecoverPassFullfiled = (state, action) => {
+export const onPatchResetPassFullfiled = (state, action) => {
     if (action.payload.error) {
         state.userIsLoggedIn = false;
         state.user = null;
         state.errorMessage = action.payload.message;
     } else {
-        state.userIsRecoveringPass = true;
+        state.userIsResetingPass = true;
     }
 };
 
-export const onPostRecoverPassRejected = (state) => {
+export const onPatchResetPassRejected = (state) => {
     state.userIsLoggedIn = false;
     state.user = null;
 }
