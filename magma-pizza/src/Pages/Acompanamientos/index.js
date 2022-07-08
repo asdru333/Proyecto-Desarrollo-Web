@@ -1,5 +1,5 @@
 import SideMenu from "../../Components/SideMenu";
-import ProductGrid from "../../Components/ProductGrid";
+import {ProductGrid} from "../../Components/ProductGrid";
 
 export default function Acompanamientos() {
     return (

@@ -6,6 +6,7 @@ import {
   IngredientOption,
 } from "../../Components/CustomIngredientBox";
 import { useEffect, useState } from "react";
+import { defaultClassName } from "react-mapbox-gl/lib/popup";
 
 export default function CreaTuPizza() {
   const [size, setSize] = useState("");
@@ -49,7 +50,7 @@ export default function CreaTuPizza() {
     setPrevPrices({ ...prevPrices, [name]: itemPrice });
     setter(item);
   };
-
+  
   const handleCheckboxChange = (ingredient, setter, item, itemPrice) => {
     if (ingredient.some((option) => option === item)) {
       //remove item

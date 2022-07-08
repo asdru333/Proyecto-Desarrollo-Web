@@ -1,4 +1,4 @@
-import ProductGrid from "../../Components/ProductGrid";
+import {ProductGrid} from "../../Components/ProductGrid";
 import SideMenu from "../../Components/SideMenu";
 
 export default function Promos() {
