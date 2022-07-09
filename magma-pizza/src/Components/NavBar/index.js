@@ -28,16 +28,7 @@ function Navbar() {
       setDropdown(false);
     }
   };
-  
-  /** 
-  const onMouseEnter = () => {
-    setDropdown(true);
-  };
-  
-  const onMouseLeave = () => {
-    setDropdown(false);
-  };
-  */
+
   return (
     <>
       <nav className='navbar'>
@@ -78,15 +69,6 @@ function Navbar() {
           </li>
           <li className='nav-item'>
             <Link
-              to='/Login'
-              className='nav-links'
-              onClick={() => {setClick(false); Mixpanel.track(Mixpanel.TYPES.GO_TO_LOGIN);}}
-            >
-              Inicie sesión
-            </Link>
-          </li>
-          <li className='nav-item'>
-            <Link
               to='/SobreNosotros'
               className='nav-links'
               onClick={() => {setClick(false); Mixpanel.track(Mixpanel.TYPES.GO_TO_ABOUT_US);}}
@@ -101,6 +83,15 @@ function Navbar() {
               onClick={() => {setClick(false); Mixpanel.track(Mixpanel.TYPES.GO_TO_CONTACT_US);}}
             >
               Contáctenos
+            </Link>
+          </li>
+          <li className='nav-item'>
+            <Link
+              to='/Login'
+              className='nav-links'
+              onClick={() => {setClick(false); Mixpanel.track(Mixpanel.TYPES.GO_TO_LOGIN);}}
+            >
+              Inicie sesión
             </Link>
           </li>
           <div className='carrito'>

@@ -93,30 +93,7 @@ export default function CreaTuPizza() {
               );
             })}
         </IngredientBox>
-        <ColoredIngredientBox title="Pastas">
-          {ingredients &&
-            ingredients.crusts.map((i) => {
-              return (
-                <IngredientOption text={`${i.label}`}>
-                  <input
-                    className="form-radio text-yellow h-5 w-5"
-                    type="radio"
-                    value={`${i.value}`}
-                    name="crust"
-                    onChange={(evt) => {
-                      handleRadioChange(
-                        setCrust,
-                        evt.target.value,
-                        evt.target.name,
-                        i.price
-                      );
-                    }}
-                  />
-                </IngredientOption>
-              );
-            })}
-        </ColoredIngredientBox>
-        <IngredientBox title="Salsas">
+        <ColoredIngredientBox title="Salsas">
           {ingredients &&
             ingredients.sauces.map((i) => {
               return (
@@ -138,8 +115,8 @@ export default function CreaTuPizza() {
                 </IngredientOption>
               );
             })}
-        </IngredientBox>
-        <ColoredIngredientBox title="Quesos">
+        </ColoredIngredientBox>
+        <IngredientBox title="Quesos">
           {ingredients &&
             ingredients.cheeses.map((i) => {
               return (
@@ -161,8 +138,8 @@ export default function CreaTuPizza() {
                 </IngredientOption>
               );
             })}
-        </ColoredIngredientBox>
-        <IngredientBox title="Carnes">
+        </IngredientBox>
+        <ColoredIngredientBox title="Carnes">
           {ingredients &&
             ingredients.meats.map((i) => {
               return (
@@ -184,8 +161,8 @@ export default function CreaTuPizza() {
                 </IngredientOption>
               );
             })}
-        </IngredientBox>
-        <ColoredIngredientBox title="Vegetales y Frutas">
+        </ColoredIngredientBox>
+        <IngredientBox title="Vegetales y Frutas">
           {ingredients &&
             ingredients.vegetables.map((i) => {
               return (
@@ -207,8 +184,8 @@ export default function CreaTuPizza() {
                 </IngredientOption>
               );
             })}
-        </ColoredIngredientBox>
-        <IngredientBox title="Extras">
+        </IngredientBox>
+        <ColoredIngredientBox title="Extras">
           {ingredients &&
             ingredients.extras.map((i) => {
               return (
@@ -230,7 +207,7 @@ export default function CreaTuPizza() {
                 </IngredientOption>
               );
             })}
-        </IngredientBox>
+        </ColoredIngredientBox>
         <hr className="border-red" />
         <h2 className="text-2xl text-center">Costo: ₡{price}</h2>
         <div className="flex w-9/12 m-auto justify-center gap-x-10 pb-5">

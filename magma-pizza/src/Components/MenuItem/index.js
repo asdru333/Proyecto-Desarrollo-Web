@@ -9,7 +9,7 @@ function MenuItem({name, description, price, image, alt}){
             <div className="flex justify-center">
                 <img className = "w-56 h-56" src={image} alt={alt} />
             </div>
-            <div className = "text-center flex flex-col gap-1">
+            <div className = "text-center flex flex-col gap-1 w-56">
                 <p>{name}</p>
                 <p className='whitespace-pre-line'>{description}</p>
                 <p>Precio: {price}</p>
@@ -29,6 +29,8 @@ function MenuPizzaItem({name, description, price, image, alt}){
             itemPrice = itemPrice + 750
         else if (itemValue === "Grande")
             itemPrice = itemPrice + 1500
+        else if (itemValue === "Monstruo")
+            itemPrice = itemPrice + 2100
         let newPrice = parseInt(price) + itemPrice;
         setSizePrice(newPrice);
         setSize(itemValue);
@@ -39,14 +41,15 @@ function MenuPizzaItem({name, description, price, image, alt}){
             <div className="flex justify-center">
                 <img className = "w-56 h-56" src={image} alt={alt} />
             </div>
-            <div className = "text-center flex flex-col gap-1">
+            <div className = "text-center flex flex-col gap-1 w-56">
                 <p>{name}</p>
                 <p className='whitespace-pre-line'>{description}</p>
-                <div classname="bg-pizza text-white">
-                    <select onChange={(evt) => handleDropdownChange(evt.target.value)}>
-                        <option classname="bg-pizza text-white" value="Pequeña">Pequeña</option>
-                        <option value="Mediana">Mediana</option>
-                        <option value="Grande">Grande</option>
+                <div>
+                    <select className= "bg-pizza text-white w-56" onChange={(evt) => handleDropdownChange(evt.target.value)}>
+                        <option className="active:bg-yellow" value="Pequeña">Pequeña</option>
+                        <option className="focus:bg-yellow" value="Mediana">Mediana</option>
+                        <option className="hover:bg-yellow" value="Grande">Grande</option>
+                        <option className="hover:bg-yellow" value="Monstruo">Monstruo</option>
                     </select>
                 </div>
                 <p>Precio: {sizePrice}</p>
