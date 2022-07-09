@@ -64,9 +64,7 @@ function ProductGridPizza({url}) {
             {
                 items && items.map((i) => {
                     return (
-                        <div>
                             <MenuPizzaItem name= {`${i.name}`} description={`${i.description}`} price= {`${i.price}`} image= {`${i.image}`} alt= {`${i.name}`}/>
-                        </div>
                     )
                 })
             }
