@@ -50,7 +50,7 @@ function SideMenuBtn(props) {
 
 function FormBtn({text, func}) {
     return (
-        <button className="h-12 w-40 bg-yellow hover:bg-light-red text-lg font- p-2 rounded-md" onClick={func}>{text}</button>
+        <button className="h-12 w-70 bg-yellow hover:bg-light-red text-lg p-2 rounded-md" onClick={func}>{text}</button>
     )
 }
 

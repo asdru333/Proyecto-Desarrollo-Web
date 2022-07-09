@@ -12,7 +12,7 @@ function Navbar() {
   const closeMobileMenu = () => setClick(false);
   const navigate = useNavigate();
   const onMouseEnter = () => {
-    if (window.innerWidth < 960) {
+    if (window.innerWidth < 1100) {
       setDropdown(false);
     } else {
       setDropdown(true);
@@ -20,7 +20,7 @@ function Navbar() {
   };
 
   const onMouseLeave = () => {
-    if (window.innerWidth < 960) {
+    if (window.innerWidth < 1100) {
       setDropdown(false);
     } else {
       setDropdown(false);

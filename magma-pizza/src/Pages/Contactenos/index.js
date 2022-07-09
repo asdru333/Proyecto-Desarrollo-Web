@@ -6,7 +6,7 @@ import {TiSocialFacebook, TiSocialInstagram, TiSocialTwitter} from "react-icons/
 export default function Contactenos() {
     return (
       <div className="row-4">
-        <div className="mt-14 lg:mx-44">
+        <div className="mt-14 xl:mx-40 lg:mx-20 cel:mx-3">
           <h2 className="text-pizza text-3xl">Ubicación:</h2>
           <br/>
           <p className="text-xl">Nos ubicamos en la Ciudad de la Investigación de la UCR, San Pedro de Montes de Oca. Del supermercado Muñoz y Nanne 400 metros Norte (entrada principal 

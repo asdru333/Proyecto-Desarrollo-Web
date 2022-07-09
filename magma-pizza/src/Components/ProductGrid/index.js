@@ -96,10 +96,10 @@ function HomeProductGrid({homePizzaUrl, homeComboUrl}) {
             <div className="w-16 h-16 border-b-2 border-pizza rounded-full animate-spin"></div>
         </div> : (
         <div>
-            <p className="text-center text-pizza text-3xl cel:text-lg cel:mx-10 mt-5 mb-10">
+            <p className="text-center text-pizza text-3xl cel:text-2xl cel:mx-10 mt-5 mb-10">
                 Disfrute de nuestras pizzas, tanto de las clásicas como las innovadoras
             </p>
-            <div className="lg:flex lg:justify-between cel:grid lg:mx-36 cel:mx-10 cel:gap-4 my-10">
+            <div className="flex justify-between tiny:justify-center flex-wrap lg:mx-36 cel:mx-10 my-10">
             {
                 pizzaItems && pizzaItems.map((i) => {
                     return (
@@ -108,15 +108,15 @@ function HomeProductGrid({homePizzaUrl, homeComboUrl}) {
                 })
             }
             </div>
-            <div className="ml-36 cel:ml-10 mb-10" >
+            <div className="ml-36 tiny:mx-10 tiny:flex tiny:justify-center mb-10" >
                 <Link to="/Pizzas">
                     <button className="h-12 w-52 bg-pizza hover:bg-yellow text-white text-lg rounded-md">Vea el menú de pizzas</button>
                 </Link>
             </div>
-            <p className="text-center text-pizza text-3xl cel:text-lg cel:mx-10 mt-5 mb-10">
+            <p className="text-center text-pizza text-3xl cel:text-2xl cel:mx-10 mt-5 mb-10">
                 Si no puede decidir ¡Dale un vistazo a nuestras promociones!
             </p>
-            <div className="lg:flex lg:justify-between cel:grid lg:mx-36 cel:mx-10 cel:gap-4 my-10">
+            <div className="lg:flex lg:justify-between cel:flex-col lg:mx-36 cel:mx-10 my-10">
             {
                 comboItems && comboItems.map((i) => {
                     return (
@@ -125,7 +125,7 @@ function HomeProductGrid({homePizzaUrl, homeComboUrl}) {
                 })
             }               
             </div>
-            <div className="ml-36 cel:ml-10 mb-10" >
+            <div className="ml-36 cel:mx-10 cel:flex cel:justify-center mb-10">
                 <Link to="/Promos">
                     <button className="h-12 w-52 bg-pizza hover:bg-yellow text-white text-lg rounded-md">Vea el menú de combos</button>
                 </Link>
