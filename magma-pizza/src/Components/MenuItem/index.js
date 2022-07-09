@@ -25,9 +25,24 @@ function MenuItem({name, description, price, image, alt}){
     )
 }
 
-function MenuPizzaItem({ name, description, price, image, alt }) {
-  const [size, setSize] = useState("Pequeña");
-  const [sizePrice, setSizePrice] = useState(parseInt(price));
+
+function MenuPizzaItem({name, description, price, image, alt}){
+    const [size, setSize] = useState("Pequeña");
+    const [sizePrice, setSizePrice] = useState(parseInt(price));
+    
+    const handleDropdownChange = (itemValue) => {
+        let itemPrice = 0;
+        if (itemValue === "Mediana")
+            itemPrice = itemPrice + 1000
+        else if (itemValue === "Grande")
+            itemPrice = itemPrice + 2000
+        else if (itemValue === "Monstruo")
+            itemPrice = itemPrice + 3000
+        let newPrice = parseInt(price) + itemPrice;
+        setSizePrice(newPrice);
+        setSize(itemValue);
+    }
+  }
 
   const handleDropdownChange = (itemValue) => {
     let itemPrice = 0;

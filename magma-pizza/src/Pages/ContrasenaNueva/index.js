@@ -3,6 +3,7 @@ import { FormBtn } from "../../Components/Buttons";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { patchResetPass } from "../../Slices/users/requests/patchResetPass";
+import { LoginInput } from "../../Components/CustomInput";
 
 export default function ContrasenaNueva() {
     const [email, setEmail] = useState("");
@@ -29,44 +30,19 @@ export default function ContrasenaNueva() {
 
                         <label className="text-lg text-white">
                             Correo electrónico
-                            <input
-                                name='email' type='email' placeholder='abc@mail.com'
-                                className="mb-6 mt-1 block px-3 py-2 w-64 bg-white border border-slate-300 rounded-md text-lg shadow-lg text-black placeholder-slate-400
-                  focus:outline-none focus:border-yellow focus:ring-1 focus:ring-yellow invalid:border-pink-500 invalid:text-pink-600
-                  focus:invalid:border-pink-500 focus:invalid:ring-pink-500"
-                                value={email}
-                                onChange={(evt) => {
-                                    setEmail(evt.target.value);
-                                }}
-                            />
+                            <LoginInput name={'email'} type={'email'} placeholder={'abc@mail.com'} value={email} func={(evt) => {setEmail(evt.target.value);}}/>
                         </label>
+
                         <label className="text-lg text-white">
                             Nueva contraseña
-                            <input
-                                name='password' type='password'
-                                className="mb-6 mt-1 block px-3 py-2 w-64 bg-white border border-slate-300 rounded-md text-lg shadow-lg text-black placeholder-slate-400
-                            focus:outline-none focus:border-yellow focus:ring-1 focus:ring-yellow invalid:border-pink-500 invalid:text-pink-600
-                            focus:invalid:border-pink-500 focus:invalid:ring-pink-500"
-                                value={password}
-                                onChange={(evt) => {
-                                    setPassword(evt.target.value);
-                                }}
-                            />
+                            <LoginInput name={'password'} type={'password'} placeholder={''} value={password} func={(evt) => {setPassword(evt.target.value);}}/>
                         </label>
 
                         <label className="text-lg text-white">
                             Repita la contraseña
-                            <input
-                                name='repeatPass' type='password'
-                                className="mb-6 mt-1 block px-3 py-2 w-64 bg-white border border-slate-300 rounded-md text-lg shadow-lg text-black placeholder-slate-400
-                            focus:outline-none focus:border-yellow focus:ring-1 focus:ring-yellow invalid:border-pink-500 invalid:text-pink-600
-                            focus:invalid:border-pink-500 focus:invalid:ring-pink-500"
-                                value={passwordConfirmation}
-                                onChange={(evt) => {
-                                    setPasswordConfirmation(evt.target.value);
-                                }}
-                            />
+                            <LoginInput name={'repeatPass'} type={'password'} value={passwordConfirmation} func={(evt) => {setPasswordConfirmation(evt.target.value);}}/>
                         </label>
+                        
                         <label className="text-lg text-white">
                             Código de confirmación
                             <input

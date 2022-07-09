@@ -4,6 +4,7 @@ import { useState } from "react";
 import { postCreateUser } from "../../Slices/users/requests/postCreateUser";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
+import { LoginInput } from "../../Components/CustomInput";
 
 export default function CrearCuenta() {
   const [name, setUsername] = useState("");
@@ -23,55 +24,19 @@ export default function CrearCuenta() {
                     <div className='flex flex-col items-center w-3/4 py-8'>
                     <label className = "text-lg text-white">
                       Nombre
-                        <input 
-                          name='name' type='text'
-                          className="mb-6 mt-1 block px-3 py-2 w-64bg-white border border-slate-300 rounded-md text-lg shadow-lg text-black placeholder-slate-400
-                            focus:outline-none focus:border-yellow focus:ring-1 focus:ring-yellow invalid:border-pink-500 invalid:text-pink-600
-                            focus:invalid:border-pink-500 focus:invalid:ring-pink-500"
-                          value={name}
-                          onChange={(evt) => {
-                            setUsername(evt.target.value);
-                          }}
-                        />
+                      <LoginInput name={'name'} type={'text'} placeholder={''} value={name} func={(evt) => {setUsername(evt.target.value);}}/>
                     </label>
                     <label className = "text-lg text-white">
                       Correo electrónico
-                        <input 
-                          name='email' type='email' placeholder='abc@mail.com' 
-                          className="mb-6 mt-1 block px-3 py-2 w-64bg-white border border-slate-300 rounded-md text-lg shadow-lg text-black placeholder-slate-400
-                            focus:outline-none focus:border-yellow focus:ring-1 focus:ring-yellow invalid:border-pink-500 invalid:text-pink-600
-                            focus:invalid:border-pink-500 focus:invalid:ring-pink-500"
-                          value={email}
-                          onChange={(evt) => {
-                            setEmail(evt.target.value);
-                          }}
-                        />
+                      <LoginInput name={'email'} type={'email'} placeholder={'abc@mail.com'} value={email} func={(evt) => {setEmail(evt.target.value);}}/>
                     </label>
                     <label className = "text-lg text-white">
                       Contraseña
-                      <input
-                        name='password' type='password'
-                        className="mb-6 mt-1 block px-3 py-2 w-64bg-white border border-slate-300 rounded-md text-lg shadow-lg text-black placeholder-slate-400
-                          focus:outline-none focus:border-yellow focus:ring-1 focus:ring-yellow invalid:border-pink-500 invalid:text-pink-600
-                          focus:invalid:border-pink-500 focus:invalid:ring-pink-500"
-                        value={password}
-                        onChange={(evt) => {
-                          setPassword(evt.target.value);
-                        }}
-                      />
+                      <LoginInput name={'password'} type={'password'} placeholder={''} value={password} func={(evt) => {setPassword(evt.target.value);}}/>
                     </label>
                     <label className = "text-lg text-white">
                       Repita su contraseña
-                      <input
-                        name='confirm-password' type='password'
-                        className="mb-6 mt-1 block px-3 py-2 w-64bg-white border border-slate-300 rounded-md text-lg shadow-lg text-black placeholder-slate-400
-                          focus:outline-none focus:border-yellow focus:ring-1 focus:ring-yellow invalid:border-pink-500 invalid:text-pink-600
-                          focus:invalid:border-pink-500 focus:invalid:ring-pink-500"
-                        value={passwordConfirmation}
-                        onChange={(evt) => {
-                          setPasswordConfirmation(evt.target.value);
-                        }}
-                      />
+                      <LoginInput name={'confirm-password'} type={'password'} placeholder={''} value={passwordConfirmation} func={(evt) => {setPasswordConfirmation(evt.target.value);}}/>
                     </label>
                     <button className="h-12 w-40 bg-yellow hover:bg-light-red text-lg font- p-2 rounded-md"
                       onClick={() => {
