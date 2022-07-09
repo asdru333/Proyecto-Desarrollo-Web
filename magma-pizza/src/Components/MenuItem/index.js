@@ -1,5 +1,5 @@
-import React from 'react';
-import { GridItemBtn } from '../Buttons';
+import React from "react";
+import { GridItemBtn } from "../Buttons";
 import { useState } from "react";
 
 function MenuItem({name, description, price, image, alt}){
@@ -18,11 +18,12 @@ function MenuItem({name, description, price, image, alt}){
                 <p>Precio: {price} </p>
             </div>
             <div className = "text-center">
-                <GridItemBtn text= 'Agregar al carrito' />
+              <GridItemBtn text="Agregar al carrito" name={name} price={price} image={image} alt={alt}/>
             </div>
         </div>
     )
 }
+
 
 function MenuPizzaItem({name, description, price, image, alt}){
     const [size, setSize] = useState("Pequeña");
@@ -40,7 +41,17 @@ function MenuPizzaItem({name, description, price, image, alt}){
         setSizePrice(newPrice);
         setSize(itemValue);
     }
+  }
 
+  const handleDropdownChange = (itemValue) => {
+    let itemPrice = 0;
+    if (itemValue === "Mediana") itemPrice = itemPrice + 750;
+    else if (itemValue === "Grande") itemPrice = itemPrice + 1500;
+    else if (itemValue === "Monstruo") itemPrice = itemPrice + 2100;
+    let newPrice = parseInt(price) + itemPrice;
+    setSizePrice(newPrice);
+    setSize(itemValue);
+  };
     return (
         <div className="flex flex-col min-h-[450px] justify-between ">
             <div className="flex justify-center">
@@ -70,29 +81,26 @@ function MenuPizzaItem({name, description, price, image, alt}){
     )
 }
 
-function CartItem(){
-    return <div>
-        <div className="flex flex-col">
-            <div className="flex justify-center">
-                <img className = "w-56" src={require('./pan.jpg')} alt="pan" />
-            </div>
-            <div className = "text-center flex flex-col gap-1">
-                <p>nombre</p>
-                <p>precio</p>
-                <p>cantidad</p>
-                <GridItemBtn text='Eliminar' />
-            </div>
-        </div>
+function CartItem(props) {
+  return (
+    <div className="flex flex-col text-center gap-1">
+      <div className="flex justify-center">
+        <img className = "w-56 h-56" src={props.image} alt={props.alt} />
+      </div>
+      <p>{props.name}</p>
+      <p>₡{props.price}</p>
+      <GridItemBtn text="Eliminar" />
     </div>
+  );
 }
 
 function HomeItem({name, image})
 {
-    return <div className='flex flex-col items-center'>
+    return( <div className='flex flex-col items-center'>
         <img className = "w-56 h-56" src={image} alt={name} />
         <p className="lg:text-xl cel:text-lg text-pizza text-center w-60">{name}</p>
     </div>
+  );
 }
 
-
-export { MenuItem, CartItem, HomeItem, MenuPizzaItem }
+export { MenuItem, CartItem, HomeItem, MenuPizzaItem };
