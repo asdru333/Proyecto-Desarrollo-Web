@@ -41,17 +41,6 @@ function MenuPizzaItem({name, description, price, image, alt}){
         setSizePrice(newPrice);
         setSize(itemValue);
     }
-  }
-
-  const handleDropdownChange = (itemValue) => {
-    let itemPrice = 0;
-    if (itemValue === "Mediana") itemPrice = itemPrice + 750;
-    else if (itemValue === "Grande") itemPrice = itemPrice + 1500;
-    else if (itemValue === "Monstruo") itemPrice = itemPrice + 2100;
-    let newPrice = parseInt(price) + itemPrice;
-    setSizePrice(newPrice);
-    setSize(itemValue);
-  };
     return (
         <div className="flex flex-col min-h-[450px] justify-between ">
             <div className="flex justify-center">
