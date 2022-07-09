@@ -31,5 +31,4 @@ function IngredientOption(props) {
   </div>
 }
 
-
 export { IngredientBox, ColoredIngredientBox, IngredientOption }

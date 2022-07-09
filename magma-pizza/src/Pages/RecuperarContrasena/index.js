@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
 import { postRecoverPass } from "../../Slices/users/requests/postRecoverPass";
+import { LoginInput } from "../../Components/CustomInput";
 
 export default function RecuperarContrasena() {
   const [email, setEmail] = useState("");
@@ -22,18 +23,7 @@ export default function RecuperarContrasena() {
               código de recuperación
             </p>
           </div>
-          <input
-            name="email"
-            type="email"
-            placeholder="abc@mail.com"
-            className="mb-6 mt-1 block px-3 py-2 w-64bg-white border border-slate-300 rounded-md text-lg shadow-lg text-black placeholder-slate-400
-                    focus:outline-none focus:border-yellow focus:ring-1 focus:ring-yellow invalid:border-pink-500 invalid:text-pink-600
-                    focus:invalid:border-pink-500 focus:invalid:ring-pink-500"
-            value={email}
-            onChange={(evt) => {
-              setEmail(evt.target.value);
-            }}
-          />
+          <LoginInput name={'email'} type={'email'} placeholder={'abc@mail.com'} value={email} func={(evt) => {setEmail(evt.target.value);}}/>
           <button
             className="h-12 w-40 bg-yellow hover:bg-light-red text-lg font- p-2 rounded-md"
             onClick={() => {

@@ -32,11 +32,11 @@ function MenuPizzaItem({name, description, price, image, alt}){
     const handleDropdownChange = (itemValue) => {
         let itemPrice = 0;
         if (itemValue === "Mediana")
-            itemPrice = itemPrice + 750
+            itemPrice = itemPrice + 1000
         else if (itemValue === "Grande")
-            itemPrice = itemPrice + 1500
+            itemPrice = itemPrice + 2000
         else if (itemValue === "Monstruo")
-            itemPrice = itemPrice + 2100
+            itemPrice = itemPrice + 3000
         let newPrice = parseInt(price) + itemPrice;
         setSizePrice(newPrice);
         setSize(itemValue);
