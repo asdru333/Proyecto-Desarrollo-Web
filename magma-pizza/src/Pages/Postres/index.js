@@ -3,7 +3,7 @@ import {ProductGrid} from "../../Components/ProductGrid";
 
 export default function Postres() {
     return (
-        <div className="py-6 mt-5 flex">
+        <div className="py-6 mt-5 flex tiny:gap-10 tiny:grid tiny:flex-none tiny:place-content-center">
             <SideMenu />
             <ProductGrid url='http://localhost:7500/deserts/'/>
         </div>

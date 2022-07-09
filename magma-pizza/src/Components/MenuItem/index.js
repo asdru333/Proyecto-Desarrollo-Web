@@ -2,22 +2,27 @@ import React from "react";
 import { GridItemBtn } from "../Buttons";
 import { useState } from "react";
 
-function MenuItem({ name, description, price, image, alt }) {
-  return (
-    <div>
-      <div className="flex flex-col">
-        <div className="flex justify-center">
-          <img className="w-56 h-56" src={image} alt={alt} />
+
+function MenuItem({name, description, price, image, alt}){
+    return (
+        <div className="flex flex-col min-h-[380px] justify-between ">
+            <div className="flex justify-center">
+                <img className = "w-56 h-56" src={image} alt={alt} />
+            </div>
+            <div className = "text-center text-pizza text-lg font-semibold w-56">
+                <p>{name}</p>
+            </div>
+            <div className = "text-center w-56">
+                <p className='whitespace-pre-line'>{description}</p>
+            </div>
+            <div className = "text-center w-56">
+                <p>Precio: {price} </p>
+            </div>
+            <div className = "text-center">
+              <GridItemBtn text="Agregar al carrito" name={name} price={price} image={image} alt={alt}/>
+            </div>
         </div>
-        <div className="text-center flex flex-col gap-1 w-56">
-          <p>{name}</p>
-          <p className="whitespace-pre-line">{description}</p>
-          <p>Precio: {price}</p>
-          <GridItemBtn text="Agregar al carrito" name={name} price={price} image={image} alt={alt}/>
-        </div>
-      </div>
-    </div>
-  );
+    )
 }
 
 function MenuPizzaItem({ name, description, price, image, alt }) {
@@ -33,45 +38,33 @@ function MenuPizzaItem({ name, description, price, image, alt }) {
     setSizePrice(newPrice);
     setSize(itemValue);
   };
-
-  return (
-    <div className="flex flex-col min-h-[450px] justify-between ">
-      <div className="flex justify-center">
-        <img className="w-56 h-56" src={image} alt={alt} />
-      </div>
-      <div className="text-center w-56">
-        <p>{name}</p>
-      </div>
-      <div className="text-center w-56">
-        <p className="whitespace-pre-line">{description}</p>
-      </div>
-      <div>
-        <select
-          className="appearance-none bg-pizza text-white w-56"
-          onChange={(evt) => handleDropdownChange(evt.target.value)}
-        >
-          <option className="appearance-none hover:bg-yellow" value="Pequeña">
-            Pequeña
-          </option>
-          <option className="focus:bg-yellow" value="Mediana">
-            Mediana
-          </option>
-          <option className="hover:bg-blue" value="Grande">
-            Grande
-          </option>
-          <option className="hover:bg-yellow" value="Monstruo">
-            Monstruo
-          </option>
-        </select>
-      </div>
-      <div>
-        <p>Precio: {sizePrice}</p>
-      </div>
-      <div>
-        <GridItemBtn text="Agregar al carrito" />
-      </div>
-    </div>
-  );
+    return (
+        <div className="flex flex-col min-h-[450px] justify-between ">
+            <div className="flex justify-center">
+                <img className = "w-56 h-56" src={image} alt={alt} />
+            </div>
+            <div className = "text-center text-pizza text-lg font-semibold w-56">
+                <p>{name}</p>
+            </div>
+            <div className = "text-center w-56">
+                <p className='whitespace-pre-line'>{description}</p>
+            </div>
+            <div className= "text-center">
+                <select className= "appearance-none bg-pizza text-white w-40" onChange={(evt) => handleDropdownChange(evt.target.value)}>
+                    <option className="focus:bg-yellow" value="Pequeña">Pequeña</option>
+                    <option value="Mediana">Mediana</option>
+                    <option value="Grande">Grande</option>
+                    <option value="Monstruo">Monstruo</option>
+                </select>
+            </div>
+            <div className = "text-center w-56">
+                <p>Precio:{sizePrice}</p>
+            </div>
+            <div className = "text-center">
+                <GridItemBtn text= 'Agregar al carrito' />
+            </div>
+        </div>
+    )
 }
 
 function CartItem(props) {
@@ -87,11 +80,11 @@ function CartItem(props) {
   );
 }
 
-function HomeItem({ description, image, alt }) {
-  return (
-    <div>
-      <img className="w-56 h-56" src={image} alt={alt} />
-      <p className="lg:text-center text-lg text-pizza">{description}</p>
+function HomeItem({name, image})
+{
+    return( <div className='flex flex-col items-center'>
+        <img className = "w-56 h-56" src={image} alt={name} />
+        <p className="lg:text-xl cel:text-lg text-pizza text-center w-60">{name}</p>
     </div>
   );
 }

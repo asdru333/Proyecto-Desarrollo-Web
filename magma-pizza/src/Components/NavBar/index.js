@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import { Link, useNavigate } from "react-router-dom";
-import logo from "../../Resources/Images/logo_magma_pizza.png";
-import "./navbar.css";
-import Dropdown from "./dropdown";
-import { TiShoppingCart } from "react-icons/ti";
-import Mixpanel from "../../Services/mixpanel";
+import './navbar.css';
+import Dropdown from './dropdown';
+import {TiShoppingCart} from "react-icons/ti";
+import Mixpanel from '../../Services/mixpanel';
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -30,9 +29,9 @@ function Navbar() {
 
   return (
     <>
-      <nav className="navbar">
-        <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-          <img className="h-20 w-20" src={logo} alt="Logo" />
+      <nav className='navbar'>
+        <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
+            <img className="h-20 w-20" src='https://ci0137.s3.amazonaws.com/magma/home/logo_magma_pizza.png' alt="Logo"/>
         </Link>
         <div className="menu-icon" onClick={handleClick}>
           <i className={click ? "fas fa-times" : "fas fa-bars"} />
