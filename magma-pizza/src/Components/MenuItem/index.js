@@ -2,7 +2,6 @@ import React from 'react';
 import { GridItemBtn } from '../Buttons';
 import { useState } from "react";
 
-
 function MenuItem({name, description, price, image, alt}){
     return (
         <div className="flex flex-col min-h-[380px] justify-between ">

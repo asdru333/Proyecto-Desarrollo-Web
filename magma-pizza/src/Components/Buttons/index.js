@@ -23,9 +23,9 @@ function SideMenuBtn(props) {
     </div>
 }
 
-function FormBtn(props) {
+function FormBtn({text, func}) {
     return <div>
-        <button className="h-12 w-40 bg-yellow hover:bg-light-red text-lg font- p-2 rounded-md">{props.text}</button>
+        <button className="h-12 w-40 bg-yellow hover:bg-light-red text-lg font- p-2 rounded-md" onClick={func}>{text}</button>
     </div>
 }
 
