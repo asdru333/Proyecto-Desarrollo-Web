@@ -81,11 +81,11 @@ function CartItem(){
     </div>
 }
 
-function HomeItem({description, image, alt})
+function HomeItem({name, image})
 {
-    return <div>
-        <img className = "w-56 h-56" src={image} alt={alt} />
-        <p className="lg:text-center text-lg text-pizza">{description}</p>
+    return <div className='flex flex-col items-center'>
+        <img className = "w-56 h-56" src={image} alt={name} />
+        <p className="lg:text-xl cel:text-lg text-pizza text-center w-60">{name}</p>
     </div>
 }
 
