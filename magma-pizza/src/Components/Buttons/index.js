@@ -2,7 +2,7 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { addItemToCart } from "../../Slices/cart/cartSlice";
+import { addItemToCart, removeItemFromCart } from "../../Slices/cart/cartSlice";
 
 function GridItemBtn(props) {
   const dispatch = useDispatch();
@@ -16,6 +16,7 @@ function GridItemBtn(props) {
             price: props.price,
             image: props.image,
             alt: props.alt,
+            size: props.size,
           };
           dispatch(
             addItemToCart({
@@ -25,6 +26,30 @@ function GridItemBtn(props) {
         }}
       >
         {props.text}
+      </button>
+    </div>
+  );
+}
+
+function CartBtn(props) {
+  const dispatch = useDispatch();
+  return (
+    <div>
+      <button
+        className="h-10 w-40 bg-red hover:bg-light-red text-white font-bold py-2 rounded-md shadow-lg"
+        onClick={() => {
+          const product = {
+            name: props.productName,
+            price: props.price,
+          };
+          dispatch(
+            removeItemFromCart({
+              product,
+            })
+          );
+        }}
+      >
+        Eliminar
       </button>
     </div>
   );
@@ -48,10 +73,15 @@ function SideMenuBtn(props) {
   );
 }
 
-function FormBtn({text, func}) {
-    return (
-        <button className="h-12 w-70 bg-yellow hover:bg-light-red text-lg p-2 rounded-md" onClick={func}>{text}</button>
-    )
+function FormBtn({ text, func }) {
+  return (
+    <button
+      className="h-12 w-40 bg-yellow hover:bg-light-red text-lg font- p-2 rounded-md"
+      onClick={func}
+    >
+      {text}
+    </button>
+  );
 }
 
 function ReceivedBtn(props) {
@@ -64,4 +94,4 @@ function ReceivedBtn(props) {
   );
 }
 
-export { GridItemBtn, SideMenuBtn, FormBtn, ReceivedBtn };
+export { GridItemBtn, SideMenuBtn, FormBtn, ReceivedBtn, CartBtn };

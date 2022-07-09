@@ -7,7 +7,6 @@ import {
 } from "../../Components/CustomIngredientBox";
 import { IngredientInput } from "../../Components/CustomInput";
 import { useEffect, useState } from "react";
-import { defaultClassName } from "react-mapbox-gl/lib/popup";
 
 export default function CreaTuPizza() {
   const [size, setSize] = useState("");
@@ -51,7 +50,7 @@ export default function CreaTuPizza() {
     setPrevPrices({ ...prevPrices, [name]: itemPrice });
     setter(item);
   };
-  
+
   const handleCheckboxChange = (ingredient, setter, item, itemPrice) => {
     if (ingredient.some((option) => option === item)) {
       //remove item
@@ -76,8 +75,19 @@ export default function CreaTuPizza() {
             ingredients.sizes.map((i) => {
               return (
                 <IngredientOption text={`${i.label}`}>
-                  <IngredientInput inputType={"radio"} ingredientValue={`${i.value}`} ingredientName={"size"} 
-                  ingredientFunction={(evt) => {handleRadioChange( setSize, evt.target.value, evt.target.name, i.price);}}/>
+                  <IngredientInput
+                    inputType={"radio"}
+                    ingredientValue={`${i.value}`}
+                    ingredientName={"size"}
+                    ingredientFunction={(evt) => {
+                      handleRadioChange(
+                        setSize,
+                        evt.target.value,
+                        evt.target.name,
+                        i.price
+                      );
+                    }}
+                  />
                 </IngredientOption>
               );
             })}
@@ -87,8 +97,19 @@ export default function CreaTuPizza() {
             ingredients.sauces.map((i) => {
               return (
                 <IngredientOption text={`${i.label}`}>
-                  <IngredientInput inputType={"radio"} ingredientValue={`${i.value}`} ingredientName={"sauce"} 
-                  ingredientFunction={(evt) => {handleRadioChange( setSize, evt.target.value, evt.target.name, i.price);}}/>
+                  <IngredientInput
+                    inputType={"radio"}
+                    ingredientValue={`${i.value}`}
+                    ingredientName={"sauce"}
+                    ingredientFunction={(evt) => {
+                      handleRadioChange(
+                        setSize,
+                        evt.target.value,
+                        evt.target.name,
+                        i.price
+                      );
+                    }}
+                  />
                 </IngredientOption>
               );
             })}
@@ -98,8 +119,19 @@ export default function CreaTuPizza() {
             ingredients.cheeses.map((i) => {
               return (
                 <IngredientOption text={`${i.label}`}>
-                  <IngredientInput inputType={"radio"} ingredientValue={`${i.value}`} ingredientName={"cheese"} 
-                  ingredientFunction={(evt) => {handleRadioChange( setSize, evt.target.value, evt.target.name, i.price);}}/>
+                  <IngredientInput
+                    inputType={"radio"}
+                    ingredientValue={`${i.value}`}
+                    ingredientName={"cheese"}
+                    ingredientFunction={(evt) => {
+                      handleRadioChange(
+                        setSize,
+                        evt.target.value,
+                        evt.target.name,
+                        i.price
+                      );
+                    }}
+                  />
                 </IngredientOption>
               );
             })}
@@ -109,8 +141,19 @@ export default function CreaTuPizza() {
             ingredients.meats.map((i) => {
               return (
                 <IngredientOption text={`${i.label}`}>
-                  <IngredientInput inputType={"checkbox"} ingredientValue={`${i.value}`} ingredientName={"meat"} 
-                  ingredientFunction={(evt) => {handleCheckboxChange(meats, setMeats, evt.target.value, i.price);}}/>
+                  <IngredientInput
+                    inputType={"checkbox"}
+                    ingredientValue={`${i.value}`}
+                    ingredientName={"meat"}
+                    ingredientFunction={(evt) => {
+                      handleCheckboxChange(
+                        meats,
+                        setMeats,
+                        evt.target.value,
+                        i.price
+                      );
+                    }}
+                  />
                 </IngredientOption>
               );
             })}
@@ -120,8 +163,19 @@ export default function CreaTuPizza() {
             ingredients.vegetables.map((i) => {
               return (
                 <IngredientOption text={`${i.label}`}>
-                  <IngredientInput inputType={"checkbox"} ingredientValue={`${i.value}`} ingredientName={"vegetable"} 
-                  ingredientFunction={(evt) => {handleCheckboxChange(vegetables, setVegetables, evt.target.value, i.price);}}/>
+                  <IngredientInput
+                    inputType={"checkbox"}
+                    ingredientValue={`${i.value}`}
+                    ingredientName={"vegetable"}
+                    ingredientFunction={(evt) => {
+                      handleCheckboxChange(
+                        vegetables,
+                        setVegetables,
+                        evt.target.value,
+                        i.price
+                      );
+                    }}
+                  />
                 </IngredientOption>
               );
             })}
@@ -131,8 +185,19 @@ export default function CreaTuPizza() {
             ingredients.extras.map((i) => {
               return (
                 <IngredientOption text={`${i.label}`}>
-                  <IngredientInput inputType={"checkbox"} ingredientValue={`${i.value}`} ingredientName={"extra"} 
-                  ingredientFunction={(evt) => {handleCheckboxChange(extras, setExtras, evt.target.value, i.price);}}/>
+                  <IngredientInput
+                    inputType={"checkbox"}
+                    ingredientValue={`${i.value}`}
+                    ingredientName={"extra"}
+                    ingredientFunction={(evt) => {
+                      handleCheckboxChange(
+                        extras,
+                        setExtras,
+                        evt.target.value,
+                        i.price
+                      );
+                    }}
+                  />
                 </IngredientOption>
               );
             })}
