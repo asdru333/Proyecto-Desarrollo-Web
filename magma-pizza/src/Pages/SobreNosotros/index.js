@@ -1,6 +1,4 @@
-import img1 from "../../Resources/Images/pizza_giratoria.png"
-import img2 from "../../Resources/Images/chef_group_smiling.png"
-import img3 from "../../Resources/Images/chef_taking_notes.png"
+import {TiTick} from "react-icons/ti";
 
 export default function SobreNosotros() {
   return (
@@ -11,21 +9,21 @@ export default function SobreNosotros() {
             <h2 className="text-pizza text-3xl">&iquest;Quienes somos?</h2>
             <br/>
             <p className="text-xl">Magma Pizza es una franquicia nacional con 100% talento costarricense. Nuestro objetivo es unir a la familia y a los amigos con nuestras 
-            deliciosas pizzas. Ese es nuestro secreto: un lugar donde puedas pasar tus momentos especiales junto con nuestras pizzas llenas de sabor.<br/>  
+            deliciosas pizzas. Ese es nuestro secreto: un lugar donde puedas pasar tus momentos especiales junto con nuestras pizzas llenas de sabor.<br/><br/>
             Con tan solo unos pocos años en el mercado, hemos logrado ser parte de la historia de muchas familias costarricenses, acompañándolos día a día, ya sea en el desayuno,
             almuerzo o cena. Siempre estaremos ahí cuando nos necesites.<br/><br/>
             ¡Lo que sea por tu pizza favorita!
              </p>
           </div>
           <div className="flex-none">
-            <img className="h-full w-full" src={img1} alt="Logo Swap it"/>
+            <img className="h-full w-full" src='https://ci0137.s3.amazonaws.com/magma/sobreNosotros/pizza_giratoria.png' alt="Logo Swap it"/>
           </div>
         </div>
         <br />
         
         <div className="flex flex-row columns-2 cel:flex-col justify-around mt-10 mx-40 gap-3">
           <div className="flex-none">
-            <img className="h-full w-full" src={img2} alt="Logo Swap it"/>
+            <img className="h-full w-full" src='https://ci0137.s3.amazonaws.com/magma/sobreNosotros/chef_group_smiling.png' alt="Logo Swap it"/>
           </div>
           <div className="text-justify">
             <h2 className="text-pizza text-3xl">Nuestros valores</h2>
@@ -52,18 +50,27 @@ export default function SobreNosotros() {
             <p className="text-xl">
               Ya sea que estes dentro de nuestro local o desde tu casa, o bien ya sea en el día o en la noche, siempre estaremos listos para servirte. 
               Nuestra misión es:
-              <br/><br/>
-              Ofrecerte productos de la mejor calidad.
-              <br/><br/>
-              Ofrecerte una calida sonrisa.
-              <br/><br/>
-              Ofrecerte productos de la mejor calidad.
-              <br/><br/>
-              ¡Tu alegría es nuestra prioridad #1!
             </p>
+            <br/>
+            <div className="flex">
+              <TiTick className="text-green-700 text-3xl"/> 
+              <p className="text-xl">Ofrecerte productos de la mejor calidad.</p>
+            </div>
+            <br/>
+            <div className="flex">
+              <TiTick className="text-green-700 text-3xl"/>
+              <p className="text-xl">Ofrecerte una calida sonrisa.</p>
+            </div>
+            <br/>
+            <div className="flex">
+              <TiTick className="text-green-700 text-3xl"/>
+              <p className="text-xl">Ofrecerte productos de la mejor calidad.</p>
+            </div>
+            <br/>
+            <p className="text-xl">¡Tu alegría es nuestra prioridad #1!</p>
           </div>
           <div className="flex-none">
-            <img className="h-full w-full" src={img3} alt="Logo Swap it"/>
+            <img className="h-full w-full" src='https://ci0137.s3.amazonaws.com/magma/sobreNosotros/chef_taking_notes.png' alt="Logo Swap it"/>
           </div>
         </div>
       </div> 

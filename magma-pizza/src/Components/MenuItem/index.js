@@ -49,14 +49,14 @@ function MenuPizzaItem({name, description, price, image, alt}){
             </div>
             <div>
                 <select className= "appearance-none bg-pizza text-white w-56" onChange={(evt) => handleDropdownChange(evt.target.value)}>
-                    <option className="appearance-none hover:bg-yellow" value="Pequeña">Pequeña</option>
-                    <option className="focus:bg-yellow" value="Mediana">Mediana</option>
-                    <option className="hover:bg-blue" value="Grande">Grande</option>
-                    <option className="hover:bg-yellow" value="Monstruo">Monstruo</option>
+                    <option value="Pequeña">Pequeña</option>
+                    <option value="Mediana">Mediana</option>
+                    <option value="Grande">Grande</option>
+                    <option value="Monstruo">Monstruo</option>
                 </select>
             </div>
             <div>
-                <p>Precio: {sizePrice}</p>
+                <p>Precio:{sizePrice}</p>
             </div>
             <div>
                 <GridItemBtn text= 'Agregar al carrito' />

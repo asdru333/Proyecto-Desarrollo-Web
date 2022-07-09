@@ -98,7 +98,7 @@ function HomeProductGrid({homePizzaUrl, homeComboUrl}) {
 
 
     return (
-        loading ? <div className="fixed top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]">
+        loading ? <div className="fixed top-[90%] left-[50%] -translate-x-[50%] -translate-y-[90%]">
             <div className="w-16 h-16 border-b-2 border-pizza rounded-full animate-spin"></div>
         </div> : (
         <div>
