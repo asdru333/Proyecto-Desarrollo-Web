@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
 import { postLogin } from "../../Slices/users/requests/postLogin";
 import { LoginInput } from "../../Components/CustomInput";
+import { FormBtn } from "../../Components/Buttons";
 
 export default function Login() {
   const [username, setUsername] = useState("");
@@ -35,8 +36,8 @@ export default function Login() {
           <Link to="/RecuperarContrasena" className="text-white mb-1 hover:underline">¿Olvidó su contraseña?</Link>
           <Link to="/CrearCuenta" className="text-white mb-1 hover:underline">¿No tiene cuenta? Regístrese</Link>
         </div>
-        <button className="h-12 w-40 bg-yellow hover:bg-light-red text-lg font- p-2 rounded-md"
-          onClick={() => {
+        <FormBtn text={'Ingresar'}
+          func={() => {
             if (username && password) {
               if (password.length < 8) {
                 setLocalErrorMessage("La contraseña debe contener al menos 8 dígitos.");                
@@ -55,7 +56,7 @@ export default function Login() {
           }}
         >
           Ingresar
-        </button>
+        </FormBtn>
       </div>
     </div>
   );

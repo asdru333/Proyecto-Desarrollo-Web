@@ -38,8 +38,7 @@ export default function CrearCuenta() {
                       Repita su contraseña
                       <LoginInput name={'confirm-password'} type={'password'} placeholder={''} value={passwordConfirmation} func={(evt) => {setPasswordConfirmation(evt.target.value);}}/>
                     </label>
-                    <button className="h-12 w-40 bg-yellow hover:bg-light-red text-lg font- p-2 rounded-md"
-                      onClick={() => {
+                    <FormBtn text={'Crear cuenta'} func={() => {
                         if (email && password && name) {
                           if (password.length < 8) {
                             setLocalErrorMessage("La contraseña debe contener al menos 8 dígitos.");
@@ -59,10 +58,8 @@ export default function CrearCuenta() {
                         } else {
                           setLocalErrorMessage("Debe completar todos los campos");
                         }
-                      }}
-                    >
-                      Crear cuenta
-                    </button>
+                    }}
+                    />
                     </div>
                 </div>
             </div>

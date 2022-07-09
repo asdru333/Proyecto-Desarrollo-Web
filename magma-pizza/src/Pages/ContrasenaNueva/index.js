@@ -57,8 +57,8 @@ export default function ContrasenaNueva() {
                         </label>
 
                     </div>
-                    <button className="h-12 w-56 bg-yellow hover:bg-light-red text-lg font- p-2 rounded-md"
-                        onClick={() => {
+                    <FormBtn text={'Cambiar mi contraseña'}
+                        func={() => {
                             if (passwordConfirmation && password && code) {
                                 if (password === passwordConfirmation) {
                                     if (password.length < 8) {
@@ -81,9 +81,7 @@ export default function ContrasenaNueva() {
                                 setLocalErrorMessage("Debe completar todos los campos");
                             }
                         }}
-                    >
-                        Cambiar mi contraseña
-                    </button>
+                    />
                 </div>
             </div>
         </div>

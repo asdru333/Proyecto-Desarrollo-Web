@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
 import { postRecoverPass } from "../../Slices/users/requests/postRecoverPass";
 import { LoginInput } from "../../Components/CustomInput";
+import { FormBtn } from "../../Components/Buttons";
 
 export default function RecuperarContrasena() {
   const [email, setEmail] = useState("");
@@ -24,9 +25,7 @@ export default function RecuperarContrasena() {
             </p>
           </div>
           <LoginInput name={'email'} type={'email'} placeholder={'abc@mail.com'} value={email} func={(evt) => {setEmail(evt.target.value);}}/>
-          <button
-            className="h-12 w-40 bg-yellow hover:bg-light-red text-lg font- p-2 rounded-md"
-            onClick={() => {
+          <FormBtn text={'Enviar código'} func= {() => {
               if (email) {
                 setLocalErrorMessage("");
                 dispatch(
@@ -38,9 +37,7 @@ export default function RecuperarContrasena() {
                 setLocalErrorMessage("Debe indicar su correo");
               }
             }}
-          >
-            Enviar código
-          </button>
+          />
         </div>
       </div>
     </div>
