@@ -20,8 +20,8 @@ export default function Login() {
 
   return (
     <div>
-      <div className="flex justify-center h-100 bg-red w-96 h-4/5 mt-6 py-8 rounded-md flex-col items-center m-auto">
-        <h1 className = "text-4xl text-white">Ingresa a tu cuenta</h1>
+      <div className="flex justify-center h-100 bg-red w-96 tiny:w-3/4 h-4/5 mt-6 py-8 rounded-md flex-col items-center m-auto">
+        <h1 className = "text-4xl tiny:text-center tiny:text-3xl text-white">Ingresa a tu cuenta</h1>
         <div className='flex flex-col items-center w-3/4 py-6'>
           <label className = "text-lg text-white">
             Correo electrónico

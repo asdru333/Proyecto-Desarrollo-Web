@@ -13,7 +13,8 @@ module.exports = {
         'pizza' :'#E53D00'
       },
       screens: {
-        'cel': {'max': '960px'}
+        'cel': {'max': '960px'},
+        'tiny': {'max': '500px'}
       }
     },
     

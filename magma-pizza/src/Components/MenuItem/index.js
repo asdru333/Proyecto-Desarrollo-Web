@@ -4,19 +4,25 @@ import { useState } from "react";
 
 
 function MenuItem({name, description, price, image, alt}){
-    return <div>
-        <div className="flex flex-col">
+    return (
+        <div className="flex flex-col min-h-[380px] justify-between ">
             <div className="flex justify-center">
                 <img className = "w-56 h-56" src={image} alt={alt} />
             </div>
-            <div className = "text-center flex flex-col gap-1 w-56">
+            <div className = "text-center text-pizza text-lg font-semibold w-56">
                 <p>{name}</p>
+            </div>
+            <div className = "text-center w-56">
                 <p className='whitespace-pre-line'>{description}</p>
-                <p>Precio: {price}</p>
+            </div>
+            <div className = "text-center w-56">
+                <p>Precio: {price} </p>
+            </div>
+            <div className = "text-center">
                 <GridItemBtn text= 'Agregar al carrito' />
             </div>
         </div>
-    </div>
+    )
 }
 
 function MenuPizzaItem({name, description, price, image, alt}){
@@ -41,24 +47,24 @@ function MenuPizzaItem({name, description, price, image, alt}){
             <div className="flex justify-center">
                 <img className = "w-56 h-56" src={image} alt={alt} />
             </div>
-            <div className = "text-center w-56">
+            <div className = "text-center text-pizza text-lg font-semibold w-56">
                 <p>{name}</p>
             </div>
             <div className = "text-center w-56">
                 <p className='whitespace-pre-line'>{description}</p>
             </div>
-            <div>
-                <select className= "appearance-none bg-pizza text-white w-56" onChange={(evt) => handleDropdownChange(evt.target.value)}>
-                    <option value="Pequeña">Pequeña</option>
+            <div className= "text-center">
+                <select className= "appearance-none bg-pizza text-white w-40" onChange={(evt) => handleDropdownChange(evt.target.value)}>
+                    <option className="focus:bg-yellow" value="Pequeña">Pequeña</option>
                     <option value="Mediana">Mediana</option>
                     <option value="Grande">Grande</option>
                     <option value="Monstruo">Monstruo</option>
                 </select>
             </div>
-            <div>
+            <div className = "text-center w-56">
                 <p>Precio:{sizePrice}</p>
             </div>
-            <div>
+            <div className = "text-center">
                 <GridItemBtn text= 'Agregar al carrito' />
             </div>
         </div>

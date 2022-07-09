@@ -23,19 +23,15 @@ function ProductGrid({url}) {
         loading ? <div className="fixed top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]">
             <div className="w-16 h-16 border-b-2 border-pizza rounded-full animate-spin"></div>
         </div> : (
-        <div>
-            <div className="mx-10 mb-20 grid lg:grid-cols-5 gap-8 lg:pr-40">
+            <div className="mx-10 mb-20 grid lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-5 gap-8 xl:pr-40">
             {
                 items && items.map((i) => {
                     return (
-                        <div>
-                            <MenuItem name= {`${i.name}`} description={`${i.description}`} price= {`${i.price}`} image= {`${i.image}`} alt= {`${i.name}`}/>
-                        </div>
+                        <MenuItem name= {`${i.name}`} description={`${i.description}`} price= {`${i.price}`} image= {`${i.image}`} alt= {`${i.name}`}/>
                     )
                 })
             }
             </div>
-        </div>
         )
     )
 }
@@ -60,17 +56,15 @@ function ProductGridPizza({url}) {
         loading ? <div className="fixed top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]">
             <div className="w-16 h-16 border-b-2 border-pizza rounded-full animate-spin"></div>
         </div> : (
-        <div>
-            <div className="mx-10 mb-20 grid lg:grid-cols-5 gap-8 lg:pr-40">
+            <div className="mx-10 mb-20 grid lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-5 gap-8 xl:pr-40">
             {
                 items && items.map((i) => {
                     return (
-                            <MenuPizzaItem name= {`${i.name}`} description={`${i.description}`} price= {`${i.price}`} image= {`${i.image}`} alt= {`${i.name}`}/>
+                        <MenuPizzaItem name= {`${i.name}`} description={`${i.description}`} price= {`${i.price}`} image= {`${i.image}`} alt= {`${i.name}`}/>
                     )
                 })
             }
             </div>
-        </div>
         )
     )
 }
