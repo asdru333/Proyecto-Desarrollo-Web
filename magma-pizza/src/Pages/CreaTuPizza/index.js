@@ -68,7 +68,7 @@ export default function CreaTuPizza() {
   ) : (
     <div>
       <h1 className="text-3xl text-center my-5">Crea tu propia pizza</h1>
-      <div className="flex flex-col w-9/12 gap-y-5 justify-center m-auto">
+      <div className="flex flex-col w-10/12 cel:w-full gap-y-5 justify-center m-auto">
         <IngredientBox title="Tamaño">
           {ingredients &&
             ingredients.sizes.map((i) => {
