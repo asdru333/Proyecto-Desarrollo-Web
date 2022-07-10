@@ -31,11 +31,11 @@ export default function Contactenos() {
           </p>  
         </div>  
         <br/>
-        <div className="flex flex-col mb-10">
+        <div className="flex flex-col my-10">
           <div className="text-center">
             <h2 className="text-pizza text-3xl">Redes sociales:</h2>
-            <br/>
           </div>
+          <br/>
           <div className="flex justify-center gap-9 text-4xl">
             <TiSocialFacebook className="cursor-pointer"/> <TiSocialTwitter className="cursor-pointer"/> <TiSocialInstagram className="cursor-pointer"/>
           </div>
