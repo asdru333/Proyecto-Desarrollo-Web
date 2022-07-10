@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { postLogin } from "../../Slices/users/requests/postLogin";
 import { LoginInput } from "../../Components/CustomInput";
 import { FormBtn } from "../../Components/Buttons";
@@ -9,8 +9,6 @@ export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [localErrorMessage, setLocalErrorMessage] = useState("");
-  const userIsLoggedIn = useSelector((state) => state.user.userIsLoggedIn);
-  const errorMessage = useSelector((state) => state.user.errorMessage);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const goToHomePage = () => navigate('/'); 

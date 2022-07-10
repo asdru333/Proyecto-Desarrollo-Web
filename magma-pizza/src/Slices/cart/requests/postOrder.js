@@ -1,17 +1,17 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-export const postOrder = createAsyncThunk('usuarios/postOrder', async (credentials) => {
+export const postOrder = createAsyncThunk('usuarios/postOrder', async (orderInfo) => {
     const orderFetch = await fetch('http://localhost:7500/orders/create-order', {
         method: 'POST',
         headers: {
             "Content-type": "application/json",
         },
         body: JSON.stringify({
-            name: credentials.username,
-            items: credentials.items,
-            cost: credentials.cost,
-            pickup: credentials.pickup,
-            address: credentials.address
+            name: orderInfo.name,
+            items: orderInfo.cart,
+            cost: orderInfo.totalCost,
+            pickup: orderInfo.pickup,
+            address: orderInfo.address,
         }),
     });
     const orderData = await orderFetch.json();

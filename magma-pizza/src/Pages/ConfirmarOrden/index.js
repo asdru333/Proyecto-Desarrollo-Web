@@ -1,9 +1,10 @@
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import { IngredientInput } from "../../Components/CustomInput";
 import { IngredientOption } from "../../Components/CustomIngredientBox";
 import { LoginInput } from "../../Components/CustomInput";
+import { postOrder } from "../../Slices/cart/requests/postOrder";
 
 export default function ConfirmarOrden() {
   const cart = useSelector((state) => state.cart.cart);
@@ -12,6 +13,8 @@ export default function ConfirmarOrden() {
   const [address, setAddress] = useState("");
   const totalCost = useSelector((state) => state.cart.totalCost);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   return (
     <div>
       <h1 className="text-3xl text-center mt-6">Completa tu compra</h1>
@@ -19,7 +22,10 @@ export default function ConfirmarOrden() {
         {cart &&
           cart.map((item, index) => {
             return (
-              <div className="w-full border-pizza border-b-2 pb-2 shadow-md" key={index}>
+              <div
+                className="w-full border-pizza border-b-2 pb-2 shadow-md"
+                key={index}
+              >
                 <p className="text-lg text-center">
                   {`${item.name}`} {item.size === "undefined" ? "" : item.size}{" "}
                   ₡{`${item.price}`}
@@ -89,6 +95,15 @@ export default function ConfirmarOrden() {
         <button
           className="h-10 w-56 bg-red hover:bg-light-red text-white text-lg font-bold rounded-md"
           onClick={() => {
+            dispatch(
+              postOrder({
+                name,
+                cart,
+                totalCost,
+                pickup,
+                address,
+              })
+            );
             navigate("/OrdenRecibida", { replace: true });
           }}
         >

@@ -1,6 +1,6 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addItemToCart, removeItemFromCart } from "../../Slices/cart/cartSlice";
 
@@ -85,12 +85,15 @@ function FormBtn({ text, func }) {
 }
 
 function ReceivedBtn(props) {
+  const navigate = useNavigate();
   return (
-    <div>
-      <button className="h-12 w-40 bg-pizza hover:bg-yellow ext-white text-lg font- p-2 rounded-md">
+      <button className="h-12 w-40 bg-pizza hover:bg-yellow text-white text-lg p-2 m-8 rounded-md"
+        onClick={() => {
+          navigate("/", { replace: true });
+        }}
+      >
         {props.text}
       </button>
-    </div>
   );
 }
 
