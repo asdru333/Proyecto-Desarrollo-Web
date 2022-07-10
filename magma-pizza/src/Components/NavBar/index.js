@@ -95,7 +95,7 @@ function Navbar() {
                 className="nav-links"
                 onClick={() => {
                   setClick(false);
-                  Mixpanel.track(Mixpanel.TYPES.GO_TO_LOGIN);
+                  Mixpanel.track(Mixpanel.TYPES.CLOSE_SESSION);
                   userState.logout()
                 }}
               >

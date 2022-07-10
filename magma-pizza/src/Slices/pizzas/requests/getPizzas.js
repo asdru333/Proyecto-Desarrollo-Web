@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
 export const getPizzas = createAsyncThunk('pizzas/getPizzas', async (params, { getState }) => {
-    const pizzasFetch = await fetch('http://localhost:7500/pizzas');
+    const pizzasFetch = await fetch(`${process.env.REACT_APP_API_URL}/pizzas/`);
     const pizzasData = await pizzasFetch.json();
     console.log("pizzasData: ", pizzasData);
     if (pizzasData.status === 200) {

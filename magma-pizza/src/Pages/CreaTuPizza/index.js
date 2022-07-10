@@ -29,7 +29,7 @@ export default function CreaTuPizza() {
   useEffect(() => {
     const fetchIngredients = async () => {
       const ingredientsFetch = await fetch(
-        "http://localhost:7500/ingredients/"
+        `${process.env.REACT_APP_API_URL}/ingredients/`
       );
       const ingredientsJSON = await ingredientsFetch.json();
       setIngredients(ingredientsJSON);
@@ -84,7 +84,7 @@ export default function CreaTuPizza() {
     </div>
   ) : (
     <div>
-      <h1 className="text-3xl text-center my-5">Crea tu propia pizza</h1>
+      <h1 className="text-3xl text-pizza font-semibold text-center my-5">Crea tu propia pizza</h1>
       <div className="flex flex-col w-10/12 cel:w-full gap-y-5 justify-center m-auto">
         <IngredientBox title="Tamaño">
           {ingredients &&

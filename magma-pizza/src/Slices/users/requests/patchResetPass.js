@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
 export const patchResetPass = createAsyncThunk('usuarios/patchResetPass', async (credentials) => {
-    const resetFetch = await fetch('http://localhost:7500/users/reset-password/', {
+    const resetFetch = await fetch(`${process.env.REACT_APP_API_URL}/users/reset-password/`, {
         method: 'PATCH',
         headers: {
             "Content-type": "application/json",

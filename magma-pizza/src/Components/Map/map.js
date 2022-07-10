@@ -12,7 +12,7 @@ function SimpleMap()
         <GoogleMapReact
           bootstrapURLKeys={{
             key:
-              "AIzaSyA16d9FJFh__vK04jU1P64vnEpPc3jenec"
+            process.env.REACT_APP_GOOGLE_TOKEN
           }}
           defaultCenter= {{
             lat: 9.937031544611857,

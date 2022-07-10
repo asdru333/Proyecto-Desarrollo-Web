@@ -2,7 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import Mixpanel from "../../../Services/mixpanel";
 
 export const postCreateUser = createAsyncThunk('usuarios/postCreateUser', async (credentials) => {
-    const createUserFetch = await fetch('http://localhost:7500/users/', {
+    const createUserFetch = await fetch(`${process.env.REACT_APP_API_URL}/users/`, {
         method: 'POST',
         headers: {
             "Content-type": "application/json",

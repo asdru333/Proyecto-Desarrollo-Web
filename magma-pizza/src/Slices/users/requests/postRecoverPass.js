@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
 export const postRecoverPass = createAsyncThunk('usuarios/postRecoverPass', async (credentials) => {
-    const recoverFetch = await fetch('http://localhost:7500/users/recover-password', {
+    const recoverFetch = await fetch(`${process.env.REACT_APP_API_URL}/users/recover-password`, {
         method: 'POST',
         headers: {
             "Content-type": "application/json",
