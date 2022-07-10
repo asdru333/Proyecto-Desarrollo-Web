@@ -1,6 +1,6 @@
 import { ReceivedBtn } from "../../Components/Buttons";
 
-export default function Login() {
+export default function OrdenRecibida() {
     return (
         <>
             <div className= "flex flex-col items-center">

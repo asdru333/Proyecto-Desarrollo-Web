@@ -1,10 +1,11 @@
 import { CartItem } from "../../Components/MenuItem";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 export default function Carrito() {
   const cart = useSelector((state) => state.cart.cart);
   const totalCost = useSelector((state) => state.cart.totalCost);
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -28,11 +29,14 @@ export default function Carrito() {
 
       <div className="flex flex-cols gap-x-8 my-8 justify-center">
         <p className="text-3xl">Total: ₡{totalCost}</p>
-        <Link to={"/ConfirmarOrden"}>
-          <button className="h-10 w-40 bg-red hover:bg-light-red text-white text-lg font-bold rounded-md">
-            Comprar
-          </button>
-        </Link>
+        <button
+          className="h-10 w-40 bg-red hover:bg-light-red text-white text-lg font-bold rounded-md"
+          onClick={() => {
+            navigate("/ConfirmarOrden", { replace: true });
+          }}
+        >
+          Comprar
+        </button>
       </div>
     </div>
   );

@@ -1,5 +1,4 @@
 import { useDispatch } from "react-redux";
-import { postCustomPizza } from "../../Slices/pizzas/requests/postCustomPizza";
 import {
   ColoredIngredientBox,
   IngredientBox,

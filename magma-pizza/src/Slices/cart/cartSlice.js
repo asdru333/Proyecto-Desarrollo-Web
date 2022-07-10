@@ -1,4 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
+import {
+  postOrder,
+  onPostOrderFullfiled,
+  onPostOrderRejected,
+} from "./requests/postOrder";
 
 const cartSlice = createSlice({
   name: "cart",
@@ -26,6 +31,11 @@ const cartSlice = createSlice({
       state.itemsCount = 0;
       state.cart = [];
       state.totalCost = 0;
+    },
+    extraReducers(builder) {
+      builder
+        .addCase(postOrder.fulfilled, onPostOrderFullfiled)
+        .addCase(postOrder.rejected, onPostOrderRejected);
     },
   },
 });
