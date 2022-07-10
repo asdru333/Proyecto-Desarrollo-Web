@@ -14,7 +14,6 @@ const cartSlice = createSlice({
   },
   reducers: {
     addItemToCart: (state, action) => {
-      console.log(action.payload.product);
       state.itemsCount++;
       state.cart.push(action.payload.product);
       let int = parseInt(action.payload.product.price);

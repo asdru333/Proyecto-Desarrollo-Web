@@ -74,7 +74,7 @@ function MenuPizzaItem({ name, description, price, image, alt }) {
         <GridItemBtn
           text="Agregar al carrito"
           name={name}
-          price={price}
+          price={sizePrice}
           image={image}
           alt={alt}
           size={size}

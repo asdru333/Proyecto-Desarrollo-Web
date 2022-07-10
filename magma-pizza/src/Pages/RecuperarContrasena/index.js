@@ -4,6 +4,7 @@ import { Navigate } from "react-router-dom";
 import { postRecoverPass } from "../../Slices/users/requests/postRecoverPass";
 import { LoginInput } from "../../Components/CustomInput";
 import { FormBtn } from "../../Components/Buttons";
+import { useNavigate } from "react-router-dom";
 
 export default function RecuperarContrasena() {
   const [email, setEmail] = useState("");
@@ -11,6 +12,8 @@ export default function RecuperarContrasena() {
   const errorMessage = useSelector((state) => state.user.errorMessage);
   const userIsRecoveringPass = useSelector((state) => state.user.userIsRecoveringPass);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  
   return userIsRecoveringPass ? (
     <Navigate to="/" />
   ) : (
@@ -35,6 +38,7 @@ export default function RecuperarContrasena() {
                     email
                   })
                 );
+                navigate("/ContrasenaNueva", { replace: true });
               } else {
                 setLocalErrorMessage("Debe indicar su correo");
               }

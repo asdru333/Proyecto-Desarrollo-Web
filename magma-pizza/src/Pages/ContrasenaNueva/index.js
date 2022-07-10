@@ -22,7 +22,7 @@ export default function ContrasenaNueva() {
     return (
         <div>
             <div className="flex justify-center h-100">
-                <div className="flex justify-center h-100 bg-red w-96 tiny:w-3/4 h-4/5 mt-6 py-8 rounded-md flex-col items-center m-auto my-3">
+                <div className="flex justify-center h-100 bg-red w-2/6 tiny:w-3/4 h-4/5 mt-6 py-8 rounded-md flex-col items-center m-auto my-3">
                     <h1 className="text-3xl text-white tiny:text-center tiny:text-2xl">Ingresa tu nueva contraseña</h1>
 
                     <div className='flex flex-col items-center w-3/4 py-8'>

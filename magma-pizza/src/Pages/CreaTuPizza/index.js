@@ -227,7 +227,7 @@ export default function CreaTuPizza() {
               const product = {
                 name: getPizzaString(),
                 price: price,
-                image: "",
+                image: "https://ci0137.s3.amazonaws.com/magma/personalizada/personalizada.png",
                 alt: "customPizza",
                 size: size,
               };
