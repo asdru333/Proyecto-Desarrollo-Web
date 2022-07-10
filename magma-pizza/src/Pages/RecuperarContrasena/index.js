@@ -25,6 +25,8 @@ export default function RecuperarContrasena() {
             </p>
           </div>
           <LoginInput name={'email'} type={'email'} placeholder={'abc@mail.com'} value={email} func={(evt) => {setEmail(evt.target.value);}}/>
+          {errorMessage && <span className="text-red-500">{errorMessage}</span>}
+          {localErrorMessage && <span className="text-red-500">{localErrorMessage}</span>}
           <FormBtn text={'Enviar código'} func= {() => {
               if (email) {
                 setLocalErrorMessage("");

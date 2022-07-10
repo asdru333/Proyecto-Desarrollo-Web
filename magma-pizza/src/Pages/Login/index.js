@@ -35,6 +35,7 @@ export default function Login() {
           <Link to="/RecuperarContrasena" className="text-white mb-1 hover:underline">¿Olvidó su contraseña?</Link>
           <Link to="/CrearCuenta" className="text-white mb-1 hover:underline">¿No tiene cuenta? Regístrese</Link>
         </div>
+          {localErrorMessage && <span className="text-red-500">{localErrorMessage}</span>}
           <FormBtn text={'Ingresar'}
             func={() => {
               if (username && password) {

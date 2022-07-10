@@ -1,9 +1,8 @@
 import { FormBtn } from "../../Components/Buttons";
-import { Link } from "react-router-dom";
 import { useState } from "react";
 import { postCreateUser } from "../../Slices/users/requests/postCreateUser";
 import { useDispatch, useSelector } from "react-redux";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { LoginInput } from "../../Components/CustomInput";
 
 export default function CrearCuenta() {
@@ -13,8 +12,8 @@ export default function CrearCuenta() {
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
 
   const [localErrorMessage, setLocalErrorMessage] = useState("");
-  const userIsLoggedIn = useSelector((state) => state.user.userIsLoggedIn);
   const errorMessage = useSelector((state) => state.user.errorMessage);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
     return (
         <div>
@@ -38,6 +37,8 @@ export default function CrearCuenta() {
                       Repita su contraseña
                       <LoginInput name={'confirm-password'} type={'password'} placeholder={''} value={passwordConfirmation} func={(evt) => {setPasswordConfirmation(evt.target.value);}}/>
                     </label>
+                    {errorMessage && <span className="text-red-500">{errorMessage}</span>}
+                    {localErrorMessage && <span className="text-red-500">{localErrorMessage}</span>}
                     <FormBtn text={'Crear cuenta'} func={() => {
                         if (email && password && name) {
                           if (password.length < 8) {
@@ -54,6 +55,7 @@ export default function CrearCuenta() {
                                 password,
                               })
                             );
+                            navigate("/", { replace: true });
                           }
                         } else {
                           setLocalErrorMessage("Debe completar todos los campos");

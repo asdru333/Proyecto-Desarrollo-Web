@@ -1,4 +1,3 @@
-import { FormInput } from "../../Components/FormItems";
 import { FormBtn } from "../../Components/Buttons";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
@@ -57,6 +56,8 @@ export default function ContrasenaNueva() {
                         </label>
 
                     </div>
+                    {errorMessage && <span className="text-red-500">{errorMessage}</span>}
+                    {localErrorMessage && <span className="text-red-500">{localErrorMessage}</span>}
                     <FormBtn text={'Cambiar contraseña'}
                         func={() => {
                             if (passwordConfirmation && password && code) {
