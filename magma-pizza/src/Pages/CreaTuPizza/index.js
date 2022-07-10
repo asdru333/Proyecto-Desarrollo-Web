@@ -6,10 +6,10 @@ import {
 } from "../../Components/CustomIngredientBox";
 import { IngredientInput } from "../../Components/CustomInput";
 import { useEffect, useState } from "react";
+import { addItemToCart } from "../../Slices/cart/cartSlice";
 
 export default function CreaTuPizza() {
   const [size, setSize] = useState("");
-  const [crust, setCrust] = useState("");
   const [sauce, setSauce] = useState("");
   const [cheese, setCheese] = useState("");
   const [prevPrices, setPrevPrices] = useState({
@@ -61,6 +61,23 @@ export default function CreaTuPizza() {
     }
   };
 
+  const getPizzaString = () => {
+    let pizzaString = "";
+    pizzaString +=
+      "Salsa " +
+      sauce +
+      ", queso " +
+      cheese +
+      ", " +
+      meats.join(", ") +
+      ", " +
+      vegetables.join(", ") +
+      ", " +
+      "extras " +
+      extras.join(", ");
+    return pizzaString;
+  };
+
   return loading ? (
     <div className="fixed top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]">
       <div className="w-16 h-16 border-b-2 border-pizza rounded-full animate-spin"></div>
@@ -102,7 +119,7 @@ export default function CreaTuPizza() {
                     ingredientName={"sauce"}
                     ingredientFunction={(evt) => {
                       handleRadioChange(
-                        setSize,
+                        setSauce,
                         evt.target.value,
                         evt.target.name,
                         i.price
@@ -124,7 +141,7 @@ export default function CreaTuPizza() {
                     ingredientName={"cheese"}
                     ingredientFunction={(evt) => {
                       handleRadioChange(
-                        setSize,
+                        setCheese,
                         evt.target.value,
                         evt.target.name,
                         i.price
@@ -204,7 +221,23 @@ export default function CreaTuPizza() {
         <hr className="border-red" />
         <h2 className="text-2xl text-center">Costo: ₡{price}</h2>
         <div className="flex w-9/12 m-auto justify-center gap-x-10 pb-5">
-          <button className="h-10 w-56 bg-red hover:bg-light-red text-white text-lg font-bold rounded-md">
+          <button
+            className="h-10 w-56 bg-red hover:bg-light-red text-white text-lg font-bold rounded-md"
+            onClick={() => {
+              const product = {
+                name: getPizzaString(),
+                price: price,
+                image: "",
+                alt: "customPizza",
+                size: size,
+              };
+              dispatch(
+                addItemToCart({
+                  product,
+                })
+              );
+            }}
+          >
             Añadir al carrito
           </button>
         </div>
