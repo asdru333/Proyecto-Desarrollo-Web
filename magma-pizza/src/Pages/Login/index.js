@@ -1,7 +1,6 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Navigate } from "react-router-dom";
 import { postLogin } from "../../Slices/users/requests/postLogin";
 import { LoginInput } from "../../Components/CustomInput";
 import { FormBtn } from "../../Components/Buttons";
@@ -13,6 +12,8 @@ export default function Login() {
   const userIsLoggedIn = useSelector((state) => state.user.userIsLoggedIn);
   const errorMessage = useSelector((state) => state.user.errorMessage);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const goToHomePage = () => navigate('/'); 
 
   /*
   Datos de prueba
@@ -36,27 +37,26 @@ export default function Login() {
           <Link to="/RecuperarContrasena" className="text-white mb-1 hover:underline">¿Olvidó su contraseña?</Link>
           <Link to="/CrearCuenta" className="text-white mb-1 hover:underline">¿No tiene cuenta? Regístrese</Link>
         </div>
-        <FormBtn text={'Ingresar'}
-          func={() => {
-            if (username && password) {
-              if (password.length < 8) {
-                setLocalErrorMessage("La contraseña debe contener al menos 8 dígitos.");                
+          <FormBtn text={'Ingresar'}
+            func={() => {
+              if (username && password) {
+                if (password.length < 8) {
+                  setLocalErrorMessage("La contraseña debe contener al menos 8 dígitos.");                
+                } else {
+                  setLocalErrorMessage("");
+                  dispatch(
+                    postLogin({
+                      username,
+                      password,
+                    })
+                  );
+                  goToHomePage();
+                }
               } else {
-                setLocalErrorMessage("");
-                dispatch(
-                  postLogin({
-                    username,
-                    password,
-                  })
-                );
+                setLocalErrorMessage("Debe completar todos los campos");
               }
-            } else {
-              setLocalErrorMessage("Debe completar todos los campos");
-            }
-          }}
-        >
-          Ingresar
-        </FormBtn>
+            }}
+          />
       </div>
     </div>
   );

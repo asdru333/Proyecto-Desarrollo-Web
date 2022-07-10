@@ -4,6 +4,7 @@ import './navbar.css';
 import Dropdown from './dropdown';
 import {TiShoppingCart} from "react-icons/ti";
 import Mixpanel from '../../Services/mixpanel';
+import { useSelector } from "react-redux";
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -11,6 +12,7 @@ function Navbar() {
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
   const navigate = useNavigate();
+  const userState = useSelector((state) => state.user);
   const onMouseEnter = () => {
     if (window.innerWidth < 1100) {
       setDropdown(false);
@@ -85,18 +87,36 @@ function Navbar() {
               Contáctenos
             </Link>
           </li>
-          <li className="nav-item">
-            <Link
-              to="/Login"
-              className="nav-links"
-              onClick={() => {
-                setClick(false);
-                Mixpanel.track(Mixpanel.TYPES.GO_TO_LOGIN);
-              }}
-            >
-              Inicie sesión
-            </Link>
-          </li>
+          {
+          userState.userIsLoggedIn ? (
+            <li className="nav-item">
+              <Link
+                to="/"
+                className="nav-links"
+                onClick={() => {
+                  setClick(false);
+                  Mixpanel.track(Mixpanel.TYPES.GO_TO_LOGIN);
+                  userState.logout()
+                }}
+              >
+                Cerrar sesión
+              </Link>
+            </li>
+            ): (
+              <li className="nav-item">
+                <Link
+                  to="/Login"
+                  className="nav-links"
+                  onClick={() => {
+                    setClick(false);
+                    Mixpanel.track(Mixpanel.TYPES.GO_TO_LOGIN);
+                  }}
+                >
+                  Inicie sesión
+                </Link>
+              </li>
+            )
+          }
           <div className="carrito">
             <li className="nav-item">
               <Link
